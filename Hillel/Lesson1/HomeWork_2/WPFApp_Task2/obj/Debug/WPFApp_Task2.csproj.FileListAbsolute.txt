@@ -1,0 +1,15 @@
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\bin\Debug\WPFApp_Task2.exe.config
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\bin\Debug\WPFApp_Task2.exe
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\bin\Debug\WPFApp_Task2.pdb
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\WPFApp_Task2.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\MainWindow.g.cs
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\App.g.cs
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\WPFApp_Task2_MarkupCompile.cache
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\WPFApp_Task2_MarkupCompile.lref
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\MainWindow.baml
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\WPFApp_Task2.g.resources
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\WPFApp_Task2.Properties.Resources.resources
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\WPFApp_Task2.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\WPFApp_Task2.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\WPFApp_Task2.exe
+C:\Users\Admin\Documents\Intro C sharp\Lesson1\HomeWork_2\WPFApp_Task2\obj\Debug\WPFApp_Task2.pdb
