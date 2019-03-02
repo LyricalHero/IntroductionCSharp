@@ -9,10 +9,9 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-  //без обїявления переменных для экономии памяти
  //Рациональное приближе по Архимеду к числу Пи это 22:7 
-
-            WriteLine("Pi= {0}",  (float)22/7);
+            float pi = 22/7;    
+            WriteLine("Pi= {0}", pi);
 
             ReadLine();
         }
