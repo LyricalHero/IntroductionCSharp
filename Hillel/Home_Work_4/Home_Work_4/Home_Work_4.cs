@@ -16,7 +16,8 @@ namespace Home_Work_4 {
             Task_2();
             Task_5();
             Write("\nКоличество положительных цифр в вашем наборе ({0}, {1}, {2}) = {3}",a,b,c, Task_6(a, b, c) );
-           
+            Task_7(a,b,c,out positiveNumber, out negativeNumber);
+            Write("\nКоличество отрицательных цифр в вашем наборе ({0}, {1}, {2}) = {3}",a,b,c,  negativeNumber);
 
 
             WriteLine("\nДля продолжения нажмите \"Enter \"");
