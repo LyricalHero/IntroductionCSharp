@@ -14,15 +14,16 @@ namespace Task4
         static void Main(string[] args)
         {
 //сантиметры не могут быть отрицательными, поэтому uint
-            uint SMetr;
+            uint SMetr=0 , result = 0 ;
 //в этих двух строках не работает, не могу понять почему
             //WriteLine($"Введи положительное значение в сантиметрах: {SMetr = Convert.ToUInt16(ReadLine())}" );
             //WriteLine("Введи положительное значение в сантиметрах: {0}", Convert.ToString(SMetr = Convert.ToUInt16(ReadLine())));
 
             Write("Введи положительное значение в сантиметрах: ");      //Через Console.Write()  что бы пользователь вводил на той же строке значение, где и текст
             SMetr = Convert.ToUInt16(ReadLine());
+            result = SMetr/100;
             //преобразовуем сантиметры в целое кол-во метров. 
-            WriteLine(SMetr + " cантиметров - это " + SMetr / 100 + " полных метров.");
+            WriteLine(SMetr + " cантиметров - это " + result + " полных метров.");
 
             // задание 4 можно решить без выделения памяти для новой переменной
 

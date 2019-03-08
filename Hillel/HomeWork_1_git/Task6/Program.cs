@@ -10,12 +10,13 @@ namespace Task6
         static void Main(string[] args)
         {
  //переменная для любого числа
-            double SomeNumber;
+            double SomeNumber, result=0;
 
             Write("Введите какое-нибудь число: ");
             SomeNumber = Convert.ToDouble(ReadLine());
  //вівод квадрата числа
-            WriteLine("Квадрат числа " + SomeNumber + " равен " + (SomeNumber*=SomeNumber));
+            result = SomeNumber * SomeNumber;
+            WriteLine("Квадрат числа " + SomeNumber + " равен " + result);
 
             ReadLine();
         }

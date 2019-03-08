@@ -14,8 +14,9 @@ namespace Task7
     {
         static void Main(string[] args)
         {
- //можно обойтись без объявления переменных, операция деления int на int выведет кол-во квадратов
-            WriteLine("C прямоугольника размером 543 х 130 мм можно нарезать " + (543/130) + " ровных квадрата c высотой 130мм.");
+            uint rectangle = 543, square = 130, result=0;
+            result = rectangle / square; 
+            WriteLine($"C прямоугольника размером {rectangle} х {square} мм можно нарезать " + result + $" ровных квадрата c высотой {square}мм.");
         
             ReadLine();
         }

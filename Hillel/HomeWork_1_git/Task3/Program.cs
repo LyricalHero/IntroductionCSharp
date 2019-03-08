@@ -11,8 +11,9 @@ namespace Task3
         {
  //для читабельности создал переменную string 
             string str = "  ";
+            byte a = 7, b = 15, c = 100; 
 
-            WriteLine(7 + str + 15 + str + 100);
+            WriteLine(a + str + b + str + c);
 
             ReadLine();
 
