@@ -48,7 +48,9 @@ namespace Home_Work_4 {
                     case 10:
                         WriteLine("Дина отрезка = {0} метр.", Task_10());
                         break;
-
+                    case 11:
+                        Task_11();
+                        break;
                     default:
                         break;                   
                 }
@@ -238,6 +240,56 @@ namespace Home_Work_4 {
             return result;
         }
 
+        /*11. Робот может перемещаться в четырех направлениях («С» — север, «З» — запад, «Ю» — юг, «В» — восток) 
+         * и принимать три цифровые команды: 0 — продолжать движение, 1 — поворот налево, –1 — поворот направо.
+         * Дан символ C — исходное направление робота и целое число N — посланная ему команда. 
+         * Вывести направление робота после выполнения полученной команды. 
+         сделал так, что выводит не 1 раз а можно игратся направлениями пока не надоест
+         и после каждого изменения направления выводит текущее направление движения робота
+         если надоест - пользователь вводит 2
+         */
+        static void Task_11() {
+            WriteLine("Робот может перемещаться в четырех направлениях («С» — север, «З» — запад, «Ю» — юг, «В» — восток)" +
+          "\nи принимать три цифровые команды: 0 — продолжать движение, 1 — поворот налево, –1 — поворот направо. 2 - Выйти из Таска" +
+          "\nСейчас он движется на Север.");
+            int command = 0, flagActiveDirection = 0;
+            string selectDirection = "СЗЮВ";
+            char actualDirection = 'С';
+            for(; ; ) {
+                //цикл проверки корректного ввода команды пользователем
+                for (; ; ) {
+                    UserInput("Подайте комманду роботу: ", ref command);
+                    if (command >= -1 & command <= 2) {
+                        break;
+                    }
+                    else {
+                        WriteLine("Роботу можно послать только команды: -1 , 0 , 1!");
+                        continue;
+                    }
+                }
+                switch (command) {
+                    //прямо
+                    case 0:
+                        break;
+                    //поворот направо
+                    case -1:
+                        if (flagActiveDirection == 0) { flagActiveDirection = 4; }
+                        flagActiveDirection--;
+                        actualDirection = selectDirection[flagActiveDirection];
+                        break;
+                    //поворот налево
+                    case 1:
+                        if (flagActiveDirection == 3) { flagActiveDirection = -1; }
+                        flagActiveDirection++;
+                        actualDirection = selectDirection[flagActiveDirection];
+                        break;
+                    //если пользователю надоело ,то нажал 2 и мы выходим из метода
+                    default:
+                        return;
+                }
+                WriteLine("Текущее направление Робота: " + actualDirection);
+            } 
+        }
 
 
 
