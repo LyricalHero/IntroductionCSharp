@@ -42,6 +42,9 @@ namespace Home_Work_4 {
                     case 8:
                         Task_8(ref a, ref b);
                         break;
+                    case 9:
+                        Task_9(ref a);
+                        break;
 
                     default:
                         break;                   
@@ -178,7 +181,16 @@ namespace Home_Work_4 {
             }
          }
 
-
+        /*9. Напишите программу, проверяющую число на четность.*/
+        static void Task_9(ref int A) {
+            UserInput("Введите число: ", ref A);
+            if (A % 2 == 0) {
+                WriteLine("Ваше число - четное");
+            }
+            else {
+                WriteLine("Ваше число - нечетное");
+            }
+        }
 
 
 
