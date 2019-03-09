@@ -6,22 +6,51 @@ using static System.Console;
 namespace Home_Work_4 {
     class Home_Work_4 {
         static void Main(string[] args) {
-            int a = 0, b = 0, c = 0, positiveNumber = 0, negativeNumber = 0; 
-            //инициализация переменніх пользователем
-            UserInput("Введите значение переменной A: ", ref a);
-            UserInput("Введите значение переменной B:", ref b);
-            UserInput("Введите значение переменной C:", ref c);
+            int userSelectTask = 0; //флаг для выбора Таска
+            //переменные для работы программ
+            int a = 0, b = 0, c = 0, positiveNumber = 0, negativeNumber = 0;
+            //бесконечный цикл который запрашивает у пользователя выбор программы при вводе 0 - завершение программы
+            // если пользователь введет неправильный номер - спросит еще
+            for (; ; ) {
+                UserInput("\n\nВведите номер Задания от 1 до 25. Для выхода нажмите 0.\n",ref userSelectTask);
+                if(userSelectTask == 0) { break; }
+                switch (userSelectTask) {
+                    case 1 :
+                        Task_1(ref a, ref b, ref c);
+                        break;
+                    case 2:
+                        Task_2();
+                        break;
+                    case 3:
+                        Task_3();
+                        break;
+                    case 4:
+                        Task_4();
+                        break;
+                    case 5:
+                        Task_5();
+                        break;
+                    case 6:
+                        Write("\nКоличество положительных цифр в вашем наборе ({0}, {1}, {2}) = {3}", a, b, c, Task_6(ref a,ref b,ref c));
+                        break;
+                    case 7:
+                        Task_7(ref a, ref b, ref c, out positiveNumber, out negativeNumber);
+                        Write("\nВ Вашем наборе ({0}, {1}, {2}) " +
+                            "\nколичество положительных цифр = {3}" +
+                            "\nколичество отрицательных цифр = {4}", a, b, c, positiveNumber, negativeNumber);
+                        break;
 
-            Task_1(ref a,ref b,ref c);
-            Task_2();
-            Task_5();
-            Write("\nКоличество положительных цифр в вашем наборе ({0}, {1}, {2}) = {3}",a,b,c, Task_6(a, b, c) );
-            Task_7(a,b,c,out positiveNumber, out negativeNumber);
-            Write("\nКоличество отрицательных цифр в вашем наборе ({0}, {1}, {2}) = {3}",a,b,c,  negativeNumber);
+                    default:
+                        break;                   
+                }
+
+            }
+                
+            
 
 
-            WriteLine("\nДля продолжения нажмите \"Enter \"");
-            ReadLine();
+            
+            
         }
 
         /* Метод для пользователя - запрос на введение значений 
@@ -40,13 +69,20 @@ namespace Home_Work_4 {
                 }
             }
         }
+        /*Еще один перегруженный метод запроса ввода для пользователя( 3х значений)  */
+        static void UserInput (ref int A, ref int B, ref int C) {
+            UserInput("Введите значение переменной A: ", ref A);
+            UserInput("Введите значение переменной B:", ref B);
+            UserInput("Введите значение переменной C:", ref C);
+        }
 
-            /*Task 1: Даны переменные A, B, C.
-             * Изменить их значения, переместив содержимое A в B, B — в C, C — в A,
-             * и вывести новые значения переменных A, B, C.
-             * передаю параметры по ссылку что бы внутри менялись значеня
-             поставил пользователю ограничение на то, что он может вводить только int*/
-            static void Task_1 (ref int A ,ref int B ,ref int C ) {
+        /*Task 1: Даны переменные A, B, C.
+         * Изменить их значения, переместив содержимое A в B, B — в C, C — в A,
+         * и вывести новые значения переменных A, B, C.
+         * передаю параметры по ссылку что бы внутри менялись значеня
+         поставил пользователю ограничение на то, что он может вводить только int*/
+        static void Task_1 (ref int A ,ref int B ,ref int C ) {
+            UserInput(ref A, ref B, ref C);
             int temp = 0;
             temp = A;
             A = C;
@@ -98,10 +134,11 @@ namespace Home_Work_4 {
         }
 
         /*6. Даны три целых числа. Найти количество положительных чисел в исходном наборе */
-        static byte Task_6(int A, int B, int C) {
+        static byte Task_6(ref int A,ref int B,ref int C) {
+            UserInput(ref A, ref B, ref C);
             byte result = 0;
             if (A >= 0) { result++; }
-            if (B>=0) { result++; }
+            if (B >= 0) { result++; }
             if (C >= 0) { result++; }
             return result;
         }
@@ -110,8 +147,8 @@ namespace Home_Work_4 {
          * для нахождения кол-ва положительных чисел использовал метод Task_6 который выполняет эту логику
          в передаваемых параметрах переменные для количества положительных и отрицательных чисел указал через 
          параметр out ,поскольку нет возможности вернуть 2 параметра(не используя перечисления, массивы и Tuple)*/
-        static void Task_7 (int A, int B, int C, out int positiveNumber , out int negativeNumber ) {
-            positiveNumber = Task_6(A,B,C);
+        static void Task_7 (ref int A, ref int B, ref int C, out int positiveNumber , out int negativeNumber ) {
+            positiveNumber = Task_6(ref A,ref B,ref C);
             negativeNumber = 0;
             if (A < 0) { negativeNumber++; }
             if (B < 0) { negativeNumber++; }
@@ -120,5 +157,41 @@ namespace Home_Work_4 {
 
 
 
+
+
+
+
+
+
+        /*Task 3 и 4 - теоретические но выведется по запросу пользователя в качестве текста
+         * 3. Если сделать объявление int i=11; чему будет равно значение выражения i / 5?*/
+        static void Task_3() {
+            string strOutput = "Если сделать объявление int i=11; чему будет равно значение выражения i / 5?" +
+                "\n Ответ: 2\n";
+            WriteLine(strOutput);
+        }
+        /*4. Каким будет значение b, если bool b=(double)(1/2) 
+         4.1 Какого типа переменные подойдут для хранения следующей информации:
+         Возраст человека Население города Число звезд в галактике Один байт ОЗУ Средняя зарплата за год 
+         Сведения спортсмен или нет Цвет фигуры Длина в мм. 
+         Длина в см. Фамилия человека Время года Пол человека */
+        static void Task_4() {
+            string strOutput = "4. Каким будет значение b, если bool b=(double)(1/2)" +
+                "\nОтвет: Ошибка компиляции, т.к. недьзя приводить double k bool" +
+                "\n4.1 Какого типа переменные подойдут для хранения следующей информации: " +
+                "\nВозраст человека - byte достаточно, т.к. диапазон до 255." +
+                "\nНаселение города - uint т.к. население не может быть отрицательным и вряд-ли население города превыcит 4 млн. человек" +
+                "\nЧисло звезд в галактике - ulong т.к. гугл говорит, что в Нашей галактике 200 милиардов звезд" +
+                "\nОдин байт ОЗУ - byte" +
+                "\nСредняя зарплата за год - float достаточно, т.к. зарплата средняя, и хватит 2 разряда точности для копеек." +
+                "\nСведения спортсмен или нет - bool" +
+                "\nЦвет фигуры - string" +
+                "\nлина в мм. - ulong т.к. можно и 1000 км. и большее количество к примеру хранить в милиметрах" +
+                "\nДлина в см. - ulong т.к. можно и 1000 км. и большее количество к примеру хранить в милиметрах" +
+                "\nФамилия человека - string" +
+                "\nВремя года - string" +
+                "\nПол человека - string или помечать одним символом char ('m'/ 'f')";
+            Write(strOutput);
+        }
     }
 }
