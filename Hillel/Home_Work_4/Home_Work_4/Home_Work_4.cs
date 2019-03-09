@@ -45,6 +45,9 @@ namespace Home_Work_4 {
                     case 9:
                         Task_9(ref a);
                         break;
+                    case 10:
+                        WriteLine("Дина отрезка = {0} метр.", Task_10());
+                        break;
 
                     default:
                         break;                   
@@ -192,7 +195,48 @@ namespace Home_Work_4 {
             }
         }
 
-
+        /*10. Единицы длины пронумерованы следующим образом: 1 — дециметр, 2 — километр, 3 — метр, 4 — миллиметр, 5 — сантиметр. 
+         * Дан номер единицы длины (целое число в диапазоне 1–5) и длина отрезка в этих единицах (вещественное число).
+         * Найти длину отрезка в метрах. */
+        static double Task_10() {
+            double result = 0.0;
+            int userLenght = 0, userChoice = 0;
+            WriteLine("Единицы длины пронумерованы следующим образом: 1 — дециметр, 2 — километр, 3 — метр, 4 — миллиметр, 5 — сантиметр.");
+        //проверка на условие ввел ли пользователь значение в диапазоне от 1 до 5
+            for (; ; ) {
+                UserInput("Выберите единицу длины: ",ref userChoice);
+                if(userChoice>0 && userChoice <= 5) {
+                    break;
+                }
+                else {
+                    WriteLine("Вы ввели чило не в диапазоне 1 - 5");
+                }
+            }
+            UserInput("Введите длину отрезка: ", ref userLenght);
+            switch (userChoice) {
+            // дециметр
+                case 1:
+                    result = userLenght / 10.0;
+                    break;
+             //километр
+                case 2:
+                    result = userLenght * 1000.0;
+                    break;
+             //метр
+                case 3:
+                    result = userLenght * 100.0;
+                    break;
+             //милиметр
+                case 4:
+                    result = userLenght / 1000.0;
+                    break;
+            //сантиметры
+                default:
+                    result = userLenght /100.0;
+                    break;
+            }
+            return result;
+        }
 
 
 
