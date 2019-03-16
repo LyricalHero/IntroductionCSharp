@@ -8,7 +8,8 @@ namespace Home_Work_4 {
         static void Main(string[] args) {
             int userSelectTask = 0; //флаг для выбора Таска
             //переменные для работы программ
-            int a = 0, b = 0, c = 0, positiveNumber = 0, negativeNumber = 0;
+            int a = 0, b = 0, c = 0, positiveNumber = 0, negativeNumber = 0, result = 0;
+            string tempString = "";
             //бесконечный цикл который запрашивает у пользователя выбор программы при вводе 0 - завершение программы
             // если пользователь введет неправильный номер - спросит еще
             for (; ; ) {
@@ -28,7 +29,8 @@ namespace Home_Work_4 {
                         Task_4();
                         break;
                     case 5:
-                        Task_5();
+                        result = Task_5();
+                        Write(result);
                         break;
                     case 6:
                         Write("\nКоличество положительных цифр в вашем наборе ({0}, {1}, {2}) = {3}", a, b, c, Task_6(ref a,ref b,ref c));
@@ -43,7 +45,8 @@ namespace Home_Work_4 {
                         Task_8(ref a, ref b);
                         break;
                     case 9:
-                        Task_9(ref a);
+                        if (Task_9(ref a)) { WriteLine("Ваше число четное"); }
+                        else { WriteLine("Ваше число нечетное"); }
                         break;
                     case 10:
                         WriteLine("Дина отрезка = {0} метр.", Task_10());
@@ -52,10 +55,14 @@ namespace Home_Work_4 {
                         Task_11();
                         break;
                     case 12:
-                        Task_12();
+                        tempString = Task_12(ref result);
+                        WriteLine("Вы ввели {0} {1}", result, tempString);
                         break;
                     case 13:
                         Task_13();
+                        break;
+                    case 14:
+                        Task_14(ref a, ref b, ref c,ref result);
                         break;
 
 
@@ -133,23 +140,24 @@ namespace Home_Work_4 {
         /*5. Дано целое число. Если оно является положительным, то прибавить к нему 1; 
          * если отрицательным, то вычесть из него 2; если нулевым, то заменить его на 10.
          * Вывести полученное число.*/
-        static void Task_5() {
+        static int Task_5() {
             int number = 0;
             string sOutput = "Ваше число ";
             UserInput("Введите целое число: ", ref number);
             if (number > 0) {
                 number += 1;
-                sOutput += "- положительное, мы прибавили к нему 1 и оно равно " + number;
+                sOutput += "- положительное, мы прибавили к нему 1 и оно равно " ;
             }
              else if (number < 0) {
                 number -= 2;
-                sOutput += "- отрицательное, мы вычли из него 2 и оно равно " + number;
+                sOutput += "- отрицательное, мы вычли из него 2 и оно равно " ;
             }
                 else {
                 number = 10;
                 sOutput += "равно нулю, мы заменили его на 10" ;
             }
-            Write( sOutput+ "\n");
+            Write( sOutput);
+            return number;
         }
 
         /*6. Даны три целых числа. Найти количество положительных чисел в исходном наборе */
@@ -195,13 +203,13 @@ namespace Home_Work_4 {
          }
 
         /*9. Напишите программу, проверяющую число на четность.*/
-        static void Task_9(ref int A) {
+        static bool Task_9(ref int A) {
             UserInput("Введите число: ", ref A);
             if (A % 2 == 0) {
-                WriteLine("Ваше число - четное");
+                return true;
             }
             else {
-                WriteLine("Ваше число - нечетное");
+                return false;
             }
         }
 
@@ -307,8 +315,8 @@ namespace Home_Work_4 {
          "Год" - только у чисел , которые заканчиваются на 1
          "Года" - у чисел, которые заканчиваются на 2,3,4
           Все остальные окончания чисел -  "Лет"*/
-        static void Task_12() {
-            int age = 0, yearSwich = 0;
+        static string Task_12(ref int age) {
+            int yearSwich = 0;
             string strAnswer = "";
             for (; ; ) {
                 UserInput("Введите целое число в диапазоне 20-69, определяющее возвраст(в годах): ", ref age);
@@ -330,7 +338,7 @@ namespace Home_Work_4 {
             else {
                 strAnswer = "лет.";
             }
-            WriteLine("Вы ввели {0}{1}",age,strAnswer);
+            return strAnswer;
         }
 
         /*13. Угадать число, которое загадал пользователь, используя только инструкцию if-else. 
@@ -363,8 +371,18 @@ namespace Home_Work_4 {
             }
         }
 
+        /*14. Среди трех чисел найти среднее. Если среди чисел есть равные, вывести сообщение "Ошибка"*/
+        static void Task_14(ref int A, ref int B, ref int C, ref int result) {
+            
+            UserInput(ref A, ref B, ref C);
+            if (A==B | B==C | C==A) {
+                WriteLine("Ошибка!");
+                return;
+            }
+            
 
-
+            
+        }
 
 
 
