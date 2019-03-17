@@ -128,7 +128,7 @@ namespace Home_Work_4 {
 //цикл заппроса введения числа до тех пор, пока пользователь не введет двухзначное
             for (; ; ) {
                 UserInput("Введите целое двузначное число: ",ref number);
-                if ((number >= 10 && number <= 99) | (number >= -99 && number <= -10)) { break; }
+                if ((number >= 10 & number <= 99) | (number >= -99 & number <= -10)) { break; }
                     else { continue;  }
             }
             leftNumber = number / 10;
@@ -223,7 +223,7 @@ namespace Home_Work_4 {
         //проверка на условие ввел ли пользователь значение в диапазоне от 1 до 5
             for (; ; ) {
                 UserInput("Выберите единицу длины: ",ref userChoice);
-                if(userChoice>0 && userChoice <= 5) {
+                if(userChoice>0 & userChoice <= 5) {
                     break;
                 }
                 else {
