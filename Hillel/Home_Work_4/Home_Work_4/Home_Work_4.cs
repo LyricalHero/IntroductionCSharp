@@ -287,6 +287,14 @@ namespace Home_Work_4 {
                     //прямо
                     case 0:
                         break;
+                    /*
+                    логика алгоритма следующая :
+                    в string прописаны направления
+                    про повороте направо мы проходим по строке справа-налево и указаталь текущего направления(flagActiveDirection
+                    Который указывает на текущий символ смещается в минус. Если он достигнет начала строки (0й символ)
+                    мы переносим указатель на последний символ строки
+                    При повороте налево все наоборот
+                     */
                     //поворот направо
                     case -1:
                         if (flagActiveDirection == 0) { flagActiveDirection = 4; }
@@ -372,16 +380,17 @@ namespace Home_Work_4 {
         }
 
         /*14. Среди трех чисел найти среднее. Если среди чисел есть равные, вывести сообщение "Ошибка"*/
-        static void Task_14(ref int A, ref int B, ref int C, ref int result) {
+        static bool Task_14(ref int A, ref int B, ref int C, ref int result) {
             
             UserInput(ref A, ref B, ref C);
+            //если есть равные числа выведет на консоль "Ошибка!"
             if (A==B | B==C | C==A) {
                 WriteLine("Ошибка!");
-                return;
+                return false;
             }
-            
 
-            
+
+            return true;
         }
 
 
