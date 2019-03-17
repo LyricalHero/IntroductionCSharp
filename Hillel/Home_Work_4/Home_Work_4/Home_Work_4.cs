@@ -65,6 +65,10 @@ namespace Home_Work_4 {
                         if (Task_14(ref a, ref b, ref c, ref result))
                             WriteLine($"Среди Вашего набора чисел {a}, {b}, {c}  - среднее равно {result}");
                         break;
+                    case 15:
+                        if(Task_15(ref a, ref b)) { WriteLine("Число {0} является делителем числа {1}", a, b); }
+                        else { WriteLine("Число {0} не является делителем числа {1}", a, b); }
+                        break; 
 
 
                     default:
@@ -396,6 +400,16 @@ namespace Home_Work_4 {
             
             return true;
         }
+
+        /*15. Определить, является ли число а делителем числа b  
+         * если является - вернет true*/
+        static bool Task_15(ref int A, ref int B) {
+            UserInput("Введите число 'a': ", ref A);
+            UserInput("Введите число 'b' :", ref B);
+            if (B % A == 0) { return true; }
+             else { return false; }
+        }
+
 
 
 
