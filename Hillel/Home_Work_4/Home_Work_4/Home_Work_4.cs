@@ -62,7 +62,8 @@ namespace Home_Work_4 {
                         Task_13();
                         break;
                     case 14:
-                        Task_14(ref a, ref b, ref c,ref result);
+                        if (Task_14(ref a, ref b, ref c, ref result))
+                            WriteLine($"Среди Вашего набора чисел {a}, {b}, {c}  - среднее равно {result}");
                         break;
 
 
@@ -379,17 +380,20 @@ namespace Home_Work_4 {
             }
         }
 
-        /*14. Среди трех чисел найти среднее. Если среди чисел есть равные, вывести сообщение "Ошибка"*/
+        /*14. Среди трех чисел найти среднее. Если среди чисел есть равные, вывести сообщение "Ошибка"
+         считаем что при успешном завершении метода возвращает True и при этом резульат будет в переменной result*/
         static bool Task_14(ref int A, ref int B, ref int C, ref int result) {
-            
+
             UserInput(ref A, ref B, ref C);
             //если есть равные числа выведет на консоль "Ошибка!"
             if (A==B | B==C | C==A) {
                 WriteLine("Ошибка!");
                 return false;
             }
-
-
+            if( ((A > B) & ( B > C)) | (( B < C ) & (B > A)) ) { result = B; }
+                else if(  ((C > B) & (C < A)) | ((C > A) & (C < B ))  ) { result = C; }
+                    else { result = A; }
+            
             return true;
         }
 
