@@ -13,10 +13,10 @@ namespace Home_Work_4 {
             //бесконечный цикл который запрашивает у пользователя выбор программы при вводе 0 - завершение программы
             // если пользователь введет неправильный номер - спросит еще
             for (; ; ) {
-                UserInput("\nВведите номер Задания от 1 до 25. Для выхода нажмите 0.\n",ref userSelectTask);
-                if(userSelectTask == 0) { break; }
+                UserInput("Введите номер Задания от 1 до 25. Для выхода нажмите 0.\n", ref userSelectTask);
+                if (userSelectTask == 0) { break; }
                 switch (userSelectTask) {
-                    case 1 :
+                    case 1:
                         Task_1(ref a, ref b, ref c);
                         break;
                     case 2:
@@ -33,7 +33,7 @@ namespace Home_Work_4 {
                         Write(result);
                         break;
                     case 6:
-                        Write("\nКоличество положительных цифр в вашем наборе ({0}, {1}, {2}) = {3}", a, b, c, Task_6(ref a,ref b,ref c));
+                        Write("\nКоличество положительных цифр в вашем наборе ({0}, {1}, {2}) = {3}", a, b, c, Task_6(ref a, ref b, ref c));
                         break;
                     case 7:
                         Task_7(ref a, ref b, ref c, out positiveNumber, out negativeNumber);
@@ -66,22 +66,31 @@ namespace Home_Work_4 {
                             WriteLine($"Среди Вашего набора чисел {a}, {b}, {c}  - среднее равно {result}");
                         break;
                     case 15:
-                        if(Task_15(ref a, ref b)) { WriteLine("Число {0} является делителем числа {1}", a, b); }
+                        if (Task_15(ref a, ref b)) { WriteLine("Число {0} является делителем числа {1}", a, b); }
                         else { WriteLine("Число {0} не является делителем числа {1}", a, b); }
-                        break; 
+                        break;
+                    case 16:
+                        UserInput("Введите любое число: ", ref a);
+                        if (Task_16(a)) { WriteLine("Ваше число пренадлежит интервалу [ -5, 3 ]"); }
+                        else { WriteLine("Ваше число  не пренадлежит интервалу [ -5, 3 ]"); }
+                        break;
+                    case 17:
+                        Task_17();
+                        break;
+
 
 
                     default:
-                        break;                   
+                        break;
                 }
 
             }
-                
-            
 
 
-            
-            
+
+
+
+
         }
 
         /* Метод для пользователя - запрос на введение значений 
@@ -95,13 +104,33 @@ namespace Home_Work_4 {
                     break;
                 }
                 catch {
-                    Write("Вы ввели не целочиcленное значение, попробуйте еще раз: ");
+                    WriteLine("Вы ввели не целочиcленное значение, попробуйте еще раз: ");
                     continue;
                 }
             }
         }
+
+        /// <summary>
+        /// перегруженный метод который дополнительно проверяет является ли значение в нужном нам промежутке
+        /// </summary>
+        /// <param name="inputMessage"> сообщение которое выведется пользователю</param>
+        /// <param name="variable">переменная</param>
+        /// <param name="lowBorder">диапазон "от"</param>
+        /// <param name="hightBorder">диапазон "до"</param>
+        static void UserInput(string inputMessage, ref int variable, int lowBorder, int hightBorder) {
+            //цикл заппроса введения числа до тех пор, пока пользователь не введет в нужном нам значении
+            for (; ; ) {
+                UserInput(inputMessage, ref variable);
+                if ((variable >= lowBorder) & (variable <= hightBorder)) { break; }
+                else {
+                    WriteLine($"Введите значение в диапазоне [{lowBorder} - {hightBorder}] :  ");
+                    continue; }
+            }
+        } 
+
+        
         /*Еще один перегруженный метод запроса ввода для пользователя( 3х значений)  */
-        static void UserInput (ref int A, ref int B, ref int C) {
+        static void UserInput(ref int A, ref int B, ref int C) {
             UserInput("Введите значение переменной A: ", ref A);
             UserInput("Введите значение переменной B:", ref B);
             UserInput("Введите значение переменной C:", ref C);
@@ -112,7 +141,7 @@ namespace Home_Work_4 {
          * и вывести новые значения переменных A, B, C.
          * передаю параметры по ссылку что бы внутри менялись значеня
          поставил пользователю ограничение на то, что он может вводить только int*/
-        static void Task_1 (ref int A ,ref int B ,ref int C ) {
+        static void Task_1(ref int A, ref int B, ref int C) {
             UserInput(ref A, ref B, ref C);
             int temp = 0;
             temp = A;
@@ -130,12 +159,7 @@ namespace Home_Work_4 {
          */
         static void Task_2() {
             int number = 0, leftNumber = 0, rightNumber = 0;
-//цикл заппроса введения числа до тех пор, пока пользователь не введет двухзначное
-            for (; ; ) {
-                UserInput("Введите целое двузначное число: ",ref number);
-                if ((number >= 10 & number <= 99) | (number >= -99 & number <= -10)) { break; }
-                    else { continue;  }
-            }
+            UserInput("Введите целое двузначное число: ",ref number, 10, 99);
             leftNumber = number / 10;
             rightNumber = number % 10;
             WriteLine("Левая цифра (десятки) = {0}, " +
@@ -151,22 +175,22 @@ namespace Home_Work_4 {
             UserInput("Введите целое число: ", ref number);
             if (number > 0) {
                 number += 1;
-                sOutput += "- положительное, мы прибавили к нему 1 и оно равно " ;
+                sOutput += "- положительное, мы прибавили к нему 1 и оно равно ";
             }
-             else if (number < 0) {
+            else if (number < 0) {
                 number -= 2;
-                sOutput += "- отрицательное, мы вычли из него 2 и оно равно " ;
+                sOutput += "- отрицательное, мы вычли из него 2 и оно равно ";
             }
-                else {
+            else {
                 number = 10;
-                sOutput += "равно нулю, мы заменили его на 10" ;
+                sOutput += "равно нулю, мы заменили его на 10";
             }
-            Write( sOutput);
+            Write(sOutput);
             return number;
         }
 
         /*6. Даны три целых числа. Найти количество положительных чисел в исходном наборе */
-        static byte Task_6(ref int A,ref int B,ref int C) {
+        static byte Task_6(ref int A, ref int B, ref int C) {
             UserInput(ref A, ref B, ref C);
             byte result = 0;
             if (A >= 0) { result++; }
@@ -179,8 +203,8 @@ namespace Home_Work_4 {
          * для нахождения кол-ва положительных чисел использовал метод Task_6 который выполняет эту логику
          в передаваемых параметрах переменные для количества положительных и отрицательных чисел указал через 
          параметр out ,поскольку нет возможности вернуть 2 параметра(не используя перечисления, массивы и Tuple)*/
-        static void Task_7 (ref int A, ref int B, ref int C, out int positiveNumber , out int negativeNumber ) {
-            positiveNumber = Task_6(ref A,ref B,ref C);
+        static void Task_7(ref int A, ref int B, ref int C, out int positiveNumber, out int negativeNumber) {
+            positiveNumber = Task_6(ref A, ref B, ref C);
             negativeNumber = 0;
             if (A < 0) { negativeNumber++; }
             if (B < 0) { negativeNumber++; }
@@ -192,7 +216,7 @@ namespace Home_Work_4 {
          * а если равны, то присвоить переменным нулевые значения.
          * Вывести новые значения переменных A и B.
          *  передаю параметры через ref - этим изменим значения*/
-         static void Task_8(ref int A, ref int B) {
+        static void Task_8(ref int A, ref int B) {
             UserInput("Введите значение переменной А: ", ref A);
             UserInput("Введите значение переменной B: ", ref B);
             if (A != B) {
@@ -205,7 +229,7 @@ namespace Home_Work_4 {
                 WriteLine($"Значения Ваших переменных равны, поэтому мы присвоили каждой переменной нулевое значение: " +
                     $"A = {A}, B = {B}");
             }
-         }
+        }
 
         /*9. Напишите программу, проверяющую число на четность.*/
         static bool Task_9(ref int A) {
@@ -225,37 +249,29 @@ namespace Home_Work_4 {
             double result = 0.0;
             int userLenght = 0, userChoice = 0;
             WriteLine("Единицы длины пронумерованы следующим образом: 1 — дециметр, 2 — километр, 3 — метр, 4 — миллиметр, 5 — сантиметр.");
-        //проверка на условие ввел ли пользователь значение в диапазоне от 1 до 5
-            for (; ; ) {
-                UserInput("Выберите единицу длины: ",ref userChoice);
-                if(userChoice>0 & userChoice <= 5) {
-                    break;
-                }
-                else {
-                    WriteLine("Вы ввели чило не в диапазоне 1 - 5");
-                }
-            }
+            //проверка на условие ввел ли пользователь значение в диапазоне от 1 до 5
+            UserInput("Выберите единицу длины: ", ref userChoice, 1, 5);
             UserInput("Введите длину отрезка: ", ref userLenght);
             switch (userChoice) {
-            // дециметр
+                // дециметр
                 case 1:
                     result = userLenght / 10.0;
                     break;
-             //километр
+                //километр
                 case 2:
                     result = userLenght * 1000.0;
                     break;
-             //метр
+                //метр
                 case 3:
                     result = userLenght * 100.0;
                     break;
-             //милиметр
+                //милиметр
                 case 4:
                     result = userLenght / 1000.0;
                     break;
-            //сантиметры
+                //сантиметры
                 default:
-                    result = userLenght /100.0;
+                    result = userLenght / 100.0;
                     break;
             }
             return result;
@@ -276,18 +292,7 @@ namespace Home_Work_4 {
             int command = 0, flagActiveDirection = 0;
             string selectDirection = "СЗЮВ";
             char actualDirection = 'С';
-            for(; ; ) {
-                //цикл проверки корректного ввода команды пользователем
-                for (; ; ) {
-                    UserInput("Подайте комманду роботу: ", ref command);
-                    if (command >= -1 & command <= 2) {
-                        break;
-                    }
-                    else {
-                        WriteLine("Роботу можно послать только команды: -1 , 0 , 1!");
-                        continue;
-                    }
-                }
+            UserInput("Подайте комманду роботу: ",ref command, -1, 2);
                 switch (command) {
                     //прямо
                     case 0:
@@ -317,7 +322,6 @@ namespace Home_Work_4 {
                         return;
                 }
                 WriteLine("Текущее направление Робота: " + actualDirection);
-            } 
         }
 
         /*2. Дано целое число в диапазоне 20–69, определяющее возраст (в годах). 
@@ -331,21 +335,12 @@ namespace Home_Work_4 {
         static string Task_12(ref int age) {
             int yearSwich = 0;
             string strAnswer = "";
-            for (; ; ) {
-                UserInput("Введите целое число в диапазоне 20-69, определяющее возвраст(в годах): ", ref age);
-                if(age >=20 & age <= 69) {
-                    break;
-                }
-                else {
-                    WriteLine("Вы ввели значение, которое не входит в диапазон от 20 до 69!");
-                    continue;
-                }
-            }
+            UserInput("Введите целое число в диапазоне 20-69, определяющее возвраст(в годах): ", ref age, 20, 69);
             yearSwich = age % 10;
             if (yearSwich == 1) {
                 strAnswer = "год.";
             }
-            else if (yearSwich >=2 & yearSwich <=4) {
+            else if (yearSwich >= 2 & yearSwich <= 4) {
                 strAnswer = "года.";
             }
             else {
@@ -361,19 +356,19 @@ namespace Home_Work_4 {
             int number = 0;
             string strOut = "Я угадал :)";
             UserInput("Вы загадали 2? Если Да - Нажмите 1, если Нет - любую цифру: ", ref number);
-            if(number == 1) {
+            if (number == 1) {
                 WriteLine(strOut);
                 return;
             }
             else {
                 UserInput("Вы загадали 1 ? Если Да - нажмите 1 , если нет - любую цифру: ", ref number);
-                if(number == 1) {
+                if (number == 1) {
                     WriteLine(strOut);
                     return;
                 }
-                else{ 
+                else {
                     UserInput("Тогда Вы точно загадали число 3, если да - нажмите 1 , если нет - любую цифру: ", ref number);
-                    if(number == 1) {
+                    if (number == 1) {
                         WriteLine(strOut);
                         return;
                     }
@@ -390,26 +385,55 @@ namespace Home_Work_4 {
 
             UserInput(ref A, ref B, ref C);
             //если есть равные числа выведет на консоль "Ошибка!"
-            if (A==B | B==C | C==A) {
+            if (A == B | B == C | C == A) {
                 WriteLine("Ошибка!");
                 return false;
             }
-            if( ((A > B) & ( B > C)) | (( B < C ) & (B > A)) ) { result = B; }
-                else if(  ((C > B) & (C < A)) | ((C > A) & (C < B ))  ) { result = C; }
-                    else { result = A; }
-            
+            if (((A > B) & (B > C)) | ((B < C) & (B > A))) { result = B; }
+            else if (((C > B) & (C < A)) | ((C > A) & (C < B))) { result = C; }
+            else { result = A; }
+
             return true;
         }
 
         /*15. Определить, является ли число а делителем числа b  
-         * если является - вернет true*/
+         * если является - вернет true
+         а делитель b только когда b делится на а без остатка*/
         static bool Task_15(ref int A, ref int B) {
             UserInput("Введите число 'a': ", ref A);
             UserInput("Введите число 'b' :", ref B);
             if (B % A == 0) { return true; }
-             else { return false; }
+            else { return false; }
         }
 
+        /*  16. Проверить, принадлежит ли число введенное с клавиатуры, интервалу (-5;3). 
+         если число принадлежит вернет true если нет - false
+         число передаем извне*/
+        static bool Task_16(int number) {
+            if (number >= -5 & number <= 3) { return true; }
+            else { return false; }
+        }
+
+        /*17. Дано двузначное число. Определить: входит ли в него цифра 3 входит ли в него цифра а.
+         возвращаем ответ в виде строки*/
+        static string Task_17 (){
+            string strOutput = "";
+            int number = 0, numeral = 0, leftNumeral = 0, righrtNumeral = 0;
+            //ввод пользователем двухзначного числа и цифры
+            UserInput("Введите двухзначное число: ", ref number, 10, 99);
+            UserInput("Введите цифру в диапазоне [0 - 9]: ", ref numeral, 0, 9);
+            leftNumeral = number / 10;
+            righrtNumeral = number % 10;
+
+            if(leftNumeral % 3 == 0 | righrtNumeral % 3 == 0) {
+                strOutput += "\nВ ваше число входит цифра '3'";
+            }
+            else if (leftNumeral % numeral == 0 | righrtNumeral % numeral == 0) {
+                strOutput += "\nВ ваше число входит цифра {" + numeral+ "}";
+                }
+
+            return strOutput;
+        }
 
 
 
