@@ -79,7 +79,11 @@ namespace Home_Work_4 {
                         break;
                     case 18:
                         WriteLine("Сумма всех нечетных чисел от 0 до 50 равна {0}", Task_18());
-
+                        break;
+                    case 19:
+                        UserInput("Введите а: ", ref a);
+                        UserInput("Введите b: ", ref b);
+                        WriteLine("Сумма всех положительных чисел кратных 4 в промежутке [{0} , {1}] = {2}",a,b,Task_19(a,b));
                         break;
 
 
@@ -127,7 +131,7 @@ namespace Home_Work_4 {
                 UserInput(inputMessage, ref variable);
                 if ((variable >= lowBorder) & (variable <= hightBorder)) { break; }
                 else {
-                    WriteLine($"Введите значение в диапазоне [{lowBorder} - {hightBorder}] :  ");
+                    WriteLine($"Введите значение в диапазоне [{lowBorder} , {hightBorder}] :  ");
                     continue; }
             }
         } 
@@ -450,6 +454,16 @@ namespace Home_Work_4 {
             return result;
         }
 
+        /*19. Найти сумму целых положительных чисел из промежутка от a до b, кратных четырем. */
+        static int Task_19(int a, int b) {
+            int result = 0;
+            for (int i = a; i<=b; i++ ) {
+                if((i > 0) && (i % 4 == 0)) { //если число отрицательное то даже не будет проверять второе условие
+                    result += i;
+                }
+            }
+            return result;
+        }
 
         /*Task 3 и 4 - теоретические но выведется по запросу пользователя в качестве текста
          * 3. Если сделать объявление int i=11; чему будет равно значение выражения i / 5?*/
