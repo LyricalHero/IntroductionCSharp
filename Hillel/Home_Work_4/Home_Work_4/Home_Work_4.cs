@@ -88,6 +88,12 @@ namespace Home_Work_4 {
                     case 20:
                         WriteLine(Task_20());
                         break;
+                    case 21:
+                        UserInput("Введите колличество чисел, которое будет: ", ref a);
+                        WriteLine(Task_21(a));
+                        
+                        break;
+
 
 
 
@@ -492,6 +498,62 @@ namespace Home_Work_4 {
 
             return strResultA + "\n"+ StrResultB;
         }
+
+        /*21. Даны натуральное число n и вещественные числа Найти: а) максимальное из вещественных чисел;
+         * б) минимальное из вещественных чисел; 
+         * в) максимальное и минимальное из вещественных чисел. 
+         * Примечание В задаче (в) использовать только один оператор цикла
+         * cделал 1 таск - 1 метод, и да, без массивов
+         и да, с одним оператором цикла
+         все числа записываются в строку, и разделителем чисел является символ | */
+         static string Task_21(int n) {
+            string strOutput = "", strUserNumbers = "", strTemp;
+            int startNumber = 0, endNumber = 0;
+            double number = 0.0, minValue = 0.0, maxValue = 0.0;
+
+            //цикл запроса ввода значений пользователя - количество значений - n
+            for (int i = 0; i< n; i++) {
+                Write("\nВведите вещественное число : ");
+                try {
+                    number = Convert.ToDouble(ReadLine());
+                    strUserNumbers += number;
+                    strUserNumbers+= '|';
+                    //по окончанию цикла минимальному и макс. значению будет присвоено последнее введенное пользователем значение(так надо)
+                    minValue = maxValue = number;    
+                }
+                catch {
+                    WriteLine("не-не, это не вещественное число)");
+                    i--;
+                }
+            }
+            //проход по каждому символу строки
+            for(int i =0; i < strUserNumbers.Length;i++) {
+                //если текущий символ - является разделителем чисел(т.е. == '|')
+                //
+                if(strUserNumbers[i] == '|') {
+                    endNumber = i - 1;
+                    strTemp = strUserNumbers.Substring(startNumber, endNumber);
+                    number = Convert.ToDouble(strTemp)
+;
+                    //если значение минимальное записанное в переменную больше текущего числа, 
+                    //то перезаписываем новое минимальное значение
+                    if ( minValue > number) { 
+                        minValue = number;
+                    }
+                    //так же и с максимальным поступаем
+                    if (maxValue < number) {
+                        maxValue = number;
+                    }
+                    startNumber = i + 1;
+                }
+            }
+
+            strOutput += minValue + " ";
+            strOutput += maxValue;
+
+            return strOutput;
+        }
+        
 
 
         /*Task 3 и 4 - теоретические но выведется по запросу пользователя в качестве текста
