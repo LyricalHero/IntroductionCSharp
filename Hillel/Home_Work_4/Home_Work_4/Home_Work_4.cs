@@ -85,6 +85,9 @@ namespace Home_Work_4 {
                         UserInput("Введите b: ", ref b);
                         WriteLine("Сумма всех положительных чисел кратных 4 в промежутке [{0} , {1}] = {2}",a,b,Task_19(a,b));
                         break;
+                    case 20:
+                        WriteLine(Task_20());
+                        break;
 
 
 
@@ -464,6 +467,32 @@ namespace Home_Work_4 {
             }
             return result;
         }
+
+        /*20. Найти: а) все двузначные числа, сумма квадратов цифр которых делится на 13;
+         * б) все двузначные числа, обладающие следующим свойством: 
+         * если к сумме цифр числа прибавить квадрат этой суммы, то получится снова искомое число */
+         static string Task_20() {
+            string strResultA = "a)Все двузначные числа, сумма квадратов цифр которых делится на 13: \n";
+            string StrResultB = "b)все двузначные числа, обладающие следующим свойством: " +
+                "если к сумме цифр числа прибавить квадрат этой суммы, то получится снова искомое число: \n";
+            int leftNumber = 0, rightNumber = 0, summNumber = 0;
+            for (int i =10; i<=99; i++) {
+                leftNumber = i / 10;
+                rightNumber = i % 10;
+                //a
+                if((Math.Pow(rightNumber,2 ) + Math.Pow(leftNumber, 2) ) % 13 == 0) {  
+                    strResultA += i + " ";
+                }
+                //b
+                summNumber = leftNumber + rightNumber;
+                if((summNumber + Math.Pow(summNumber, 2)) == i) {
+                    StrResultB += i + " ";
+                }
+            }
+
+            return strResultA + "\n"+ StrResultB;
+        }
+
 
         /*Task 3 и 4 - теоретические но выведется по запросу пользователя в качестве текста
          * 3. Если сделать объявление int i=11; чему будет равно значение выражения i / 5?*/
