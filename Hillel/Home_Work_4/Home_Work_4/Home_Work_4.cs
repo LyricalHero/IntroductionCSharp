@@ -77,6 +77,23 @@ namespace Home_Work_4 {
                     case 17:
                         Task_17();
                         break;
+                    case 18:
+                        WriteLine("Сумма всех нечетных чисел от 0 до 50 равна {0}", Task_18());
+                        break;
+                    case 19:
+                        UserInput("Введите а: ", ref a);
+                        UserInput("Введите b: ", ref b);
+                        WriteLine("Сумма всех положительных чисел кратных 4 в промежутке [{0} , {1}] = {2}",a,b,Task_19(a,b));
+                        break;
+                    case 20:
+                        WriteLine(Task_20());
+                        break;
+                    case 21:
+                        UserInput("Введите колличество чисел, которое будет: ", ref a);
+                        WriteLine(Task_21(a));
+                        
+                        break;
+
 
 
 
@@ -123,7 +140,7 @@ namespace Home_Work_4 {
                 UserInput(inputMessage, ref variable);
                 if ((variable >= lowBorder) & (variable <= hightBorder)) { break; }
                 else {
-                    WriteLine($"Введите значение в диапазоне [{lowBorder} - {hightBorder}] :  ");
+                    WriteLine($"Введите значение в диапазоне [{lowBorder} , {hightBorder}] :  ");
                     continue; }
             }
         } 
@@ -432,9 +449,111 @@ namespace Home_Work_4 {
                 strOutput += "\nВ ваше число входит цифра {" + numeral+ "}";
                 }
 
+
             return strOutput;
         }
 
+        /* 18. Найти сумму положительных нечетных чисел, меньших 50.
+         * что бы не добавлять условие на проверку четности или нечетности инкрементировал в цикле i на*/
+        static int Task_18() {
+            int result = 0;             
+            for (int i = 1; i <= 50; i+=2) {
+                result += i;
+            }
+            return result;
+        }
+
+        /*19. Найти сумму целых положительных чисел из промежутка от a до b, кратных четырем. */
+        static int Task_19(int a, int b) {
+            int result = 0;
+            for (int i = a; i<=b; i++ ) {
+                if((i > 0) && (i % 4 == 0)) { //если число отрицательное то даже не будет проверять второе условие
+                    result += i;
+                }
+            }
+            return result;
+        }
+
+        /*20. Найти: а) все двузначные числа, сумма квадратов цифр которых делится на 13;
+         * б) все двузначные числа, обладающие следующим свойством: 
+         * если к сумме цифр числа прибавить квадрат этой суммы, то получится снова искомое число */
+         static string Task_20() {
+            string strResultA = "a)Все двузначные числа, сумма квадратов цифр которых делится на 13: \n";
+            string StrResultB = "b)все двузначные числа, обладающие следующим свойством: " +
+                "если к сумме цифр числа прибавить квадрат этой суммы, то получится снова искомое число: \n";
+            int leftNumber = 0, rightNumber = 0, summNumber = 0;
+            for (int i =10; i<=99; i++) {
+                leftNumber = i / 10;
+                rightNumber = i % 10;
+                //a
+                if((Math.Pow(rightNumber,2 ) + Math.Pow(leftNumber, 2) ) % 13 == 0) {  
+                    strResultA += i + " ";
+                }
+                //b
+                summNumber = leftNumber + rightNumber;
+                if((summNumber + Math.Pow(summNumber, 2)) == i) {
+                    StrResultB += i + " ";
+                }
+            }
+
+            return strResultA + "\n"+ StrResultB;
+        }
+
+        /*21. Даны натуральное число n и вещественные числа Найти: а) максимальное из вещественных чисел;
+         * б) минимальное из вещественных чисел; 
+         * в) максимальное и минимальное из вещественных чисел. 
+         * Примечание В задаче (в) использовать только один оператор цикла
+         * cделал 1 таск - 1 метод, и да, без массивов
+         и да, с одним оператором цикла
+         все числа записываются в строку, и разделителем чисел является символ | */
+         static string Task_21(int n) {
+            string strOutput = "", strUserNumbers = "", strTemp;
+            int startNumber = 0, endNumber = 0;
+            double number = 0.0, minValue = 0.0, maxValue = 0.0;
+
+            //цикл запроса ввода значений пользователя - количество значений - n
+            for (int i = 0; i< n; i++) {
+                Write("\nВведите вещественное число : ");
+                try {
+                    number = Convert.ToDouble(ReadLine());
+                    strUserNumbers += number;
+                    strUserNumbers+= '|';
+                    //по окончанию цикла минимальному и макс. значению будет присвоено последнее введенное пользователем значение(так надо)
+                    minValue = maxValue = number;    
+                }
+                catch {
+                    WriteLine("не-не, это не вещественное число)");
+                    i--;
+                }
+            }
+            //проход по каждому символу строки
+            for(int i =0; i < strUserNumbers.Length;i++) {
+                //если текущий символ - является разделителем чисел(т.е. == '|')
+                //
+                if(strUserNumbers[i] == '|') {
+                    endNumber = i - 1;
+                    strTemp = strUserNumbers.Substring(startNumber, endNumber);
+                    number = Convert.ToDouble(strTemp)
+;
+                    //если значение минимальное записанное в переменную больше текущего числа, 
+                    //то перезаписываем новое минимальное значение
+                    if ( minValue > number) { 
+                        minValue = number;
+                    }
+                    //так же и с максимальным поступаем
+                    if (maxValue < number) {
+                        maxValue = number;
+                    }
+                    startNumber = i + 1;
+                }
+            }
+
+            strOutput += minValue + " ";
+            strOutput += maxValue;
+
+            return strOutput;
+        }
+        
 
 
         /*Task 3 и 4 - теоретические но выведется по запросу пользователя в качестве текста
