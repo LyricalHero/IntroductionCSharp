@@ -20,3 +20,14 @@ C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel
 C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\obj\Debug\netcoreapp2.1\Home_Work_4.AssemblyInfo.cs
 C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\obj\Debug\netcoreapp2.1\Home_Work_4.dll
 C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\obj\Debug\netcoreapp2.1\Home_Work_4.pdb
+E:\Roma\Listing\Intro C sharp\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\bin\Debug\netcoreapp2.1\Home_Work_4.deps.json
+E:\Roma\Listing\Intro C sharp\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\bin\Debug\netcoreapp2.1\Home_Work_4.runtimeconfig.json
+E:\Roma\Listing\Intro C sharp\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\bin\Debug\netcoreapp2.1\Home_Work_4.runtimeconfig.dev.json
+E:\Roma\Listing\Intro C sharp\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\bin\Debug\netcoreapp2.1\Home_Work_4.dll
+E:\Roma\Listing\Intro C sharp\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\bin\Debug\netcoreapp2.1\Home_Work_4.pdb
+E:\Roma\Listing\Intro C sharp\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\obj\Debug\netcoreapp2.1\Home_Work_4.csprojAssemblyReference.cache
+E:\Roma\Listing\Intro C sharp\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\obj\Debug\netcoreapp2.1\Home_Work_4.csproj.CoreCompileInputs.cache
+E:\Roma\Listing\Intro C sharp\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\obj\Debug\netcoreapp2.1\Home_Work_4.AssemblyInfoInputs.cache
+E:\Roma\Listing\Intro C sharp\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\obj\Debug\netcoreapp2.1\Home_Work_4.AssemblyInfo.cs
+E:\Roma\Listing\Intro C sharp\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\obj\Debug\netcoreapp2.1\Home_Work_4.dll
+E:\Roma\Listing\Intro C sharp\IntroductionCSharp\Hillel\Home_Work_4\Home_Work_4\obj\Debug\netcoreapp2.1\Home_Work_4.pdb

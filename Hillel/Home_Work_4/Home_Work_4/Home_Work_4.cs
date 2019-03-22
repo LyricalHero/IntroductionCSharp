@@ -529,12 +529,13 @@ namespace Home_Work_4 {
             //проход по каждому символу строки
             for(int i =0; i < strUserNumbers.Length;i++) {
                 //если текущий символ - является разделителем чисел(т.е. == '|')
-                //
+                //то нам нужно извлечь подстроку в которой нужное вещественное число
+                //сконвертировать е в переменную double
+                //и сравнивать с минимальным и максимальным значением (записанным по умолчанию - последний пользовательский ввод)
                 if(strUserNumbers[i] == '|') {
-                    endNumber = i - 1;
+                    endNumber = i - startNumber;
                     strTemp = strUserNumbers.Substring(startNumber, endNumber);
-                    number = Convert.ToDouble(strTemp)
-;
+                    number = Convert.ToDouble(strTemp);
                     //если значение минимальное записанное в переменную больше текущего числа, 
                     //то перезаписываем новое минимальное значение
                     if ( minValue > number) { 
@@ -548,8 +549,8 @@ namespace Home_Work_4 {
                 }
             }
 
-            strOutput += minValue + " ";
-            strOutput += maxValue;
+            strOutput += "Ваше мнинимальное значение: " + minValue + "\n";
+            strOutput += "Ваше минимальное значение: " + maxValue;
 
             return strOutput;
         }
