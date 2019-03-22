@@ -520,7 +520,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.1.0": {
-      "sha512": "aSTPL94NloSiQVL5Len8wbjFKOnoAX/vOh3s3DF6g3c7GUUMLCDvnBhmA72M2iN2AedyA8hpr7m89kzSAKUnJQ==",
+      "sha512": "GmkKfoyerqmsHMn7OZj0AKpcBabD+GaafqphvX2Mw406IwiJRy1pKcKqdCfKJfYmkRyJ6+e+RaUylgdJoDa1jQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.1.0",
       "files": [
@@ -688,23 +688,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\Roman\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\Home_Work_4\\Home_Work_4\\Home_Work_4.csproj",
+      "projectUniqueName": "E:\\Roma\\Listing\\Intro C sharp\\IntroductionCSharp\\Hillel\\Home_Work_4\\Home_Work_4\\Home_Work_4.csproj",
       "projectName": "Home_Work_4",
-      "projectPath": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\Home_Work_4\\Home_Work_4\\Home_Work_4.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\Home_Work_4\\Home_Work_4\\obj\\",
+      "projectPath": "E:\\Roma\\Listing\\Intro C sharp\\IntroductionCSharp\\Hillel\\Home_Work_4\\Home_Work_4\\Home_Work_4.csproj",
+      "packagesPath": "C:\\Users\\Roman\\.nuget\\packages\\",
+      "outputPath": "E:\\Roma\\Listing\\Intro C sharp\\IntroductionCSharp\\Hillel\\Home_Work_4\\Home_Work_4\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Roman\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
