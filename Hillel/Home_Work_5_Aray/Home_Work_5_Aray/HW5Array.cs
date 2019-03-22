@@ -28,10 +28,10 @@ namespace Home_Work_5_Aray {
             Task_1_4();
             WriteLine();
             //Task 5
-            //      int[] myArrTask5 = new int[12];
-            //      int sumTask5 = Task_1_5(myArrTask5);
-            //      Print_Arr("Наш массив: ", myArrTask5);
-            //      WriteLine($"Сумма всех элементов массива = {sumTask5}");
+            int[] myArrTask5 = new int[12];
+            int sumTask5 = Task_1_5(myArrTask5);
+            Print_Arr("Наш массив: ", myArrTask5);
+            WriteLine($"Сумма всех элементов массива = {sumTask5}");
 
             //Task 6 
             int[] myArrTask6 = new int[20];
@@ -42,18 +42,9 @@ namespace Home_Work_5_Aray {
 
             //Task 7 
             //сначала просим у пользоваателя какой дли массив он хочет
-            int indexArr;
-            Write("\nВведите размерность массива: ");
-            for (; ; ) {  //цикл будет до тех пор пока пользователь не введет целочисленное значение
-                try {
-                    indexArr = Convert.ToInt32(ReadLine());
-                    break;
-                }
-                catch {
-                    WriteLine("Вы ввели не целочисленное значение попробуйте еще раз!");
-                    continue;
-                }
-            }
+            int indexArr = 0;
+            
+            UserInput("\nВведите размерность массива: ", ref indexArr);
             //потом инициализируем этот массив случайными числами от -999 до 999
             int[] arrTask7 = setArr(indexArr, -999, 999, true);
             //выведем этот массив
@@ -66,6 +57,24 @@ namespace Home_Work_5_Aray {
             else {
                 WriteLine("Сумма всех элементов массива:{0} и она меньше 0 ", summ);
             }
+
+            //Task 8 
+            //у нас уже есть массив заполненый значениями от -999  до  999
+            //Task 8 a) меняем местами второй и пятый элемент
+            Task_1_8(arrTask7, 2, 5);
+            //выводим полученный массив
+            Print_Arr("Поменяли местами 2й и 5й элемент: ", arrTask7);
+            //теперь запрашиваем у пользователя какие элементы он хочет поменять
+            int A = 0, B = 0;
+            UserInput("Введите какой элемент хотите поменять местами: ", ref A);
+            UserInput("Введите с каким элементом хотите поменять местами: ", ref B);
+            //Меняем местами элементы
+            Task_1_8(arrTask7, A, B);
+            //и выведем массив
+            Print_Arr( $"Мы поменяли местами {A}й и {B}й элементы массива и теперь он выглядит так: ",arrTask7);
+
+
+
         }
 
         //отдельный метод в котором вся логика 5 задания вариант 2 (с двухмерными массивами)
@@ -119,6 +128,7 @@ namespace Home_Work_5_Aray {
             int[] myArr = new int[8] { 37, 0, 50, 46, 34, 46, 0, -13 };
             return myArr;
         }
+
 
 
         /*1_3 Присвоить начальные целые значения 1, 2, 3,… , 10 элементам массива из десяти элементов 
@@ -186,7 +196,7 @@ namespace Home_Work_5_Aray {
             return totalResistance;
         }
 
-        /*Выяснить, верно ли, что сумма элементов массива есть неотрицательное число.*/
+        /*1_7 Выяснить, верно ли, что сумма элементов массива есть неотрицательное число.*/
         static bool Task_1_7(int[] myArr, ref int summ) {
             
             for (int i = 0; i < myArr.Length; i++) {
@@ -195,13 +205,49 @@ namespace Home_Work_5_Aray {
 
             if (summ > 0) { return true; }
             else { return false; }
-
-
-
-
-
-
+            
         }
+
+        /*Дан массив. Поменять местами: а) второй и пятый элементы; б) m-й и n-й элементы
+         это метод меняющий местами  m-й и n-й элементы
+         */
+        static void Task_1_8(int[] myArr, int m, int n) {
+            //сделал проверку что бы не вылетал ексепшн при обращении к несуществующему элементу массива
+            if( m >myArr.Length | n > myArr.Length ) {
+                WriteLine("Вы ввели несуществующие элементы в массиве(таких элементов нет). Мы не смогли поменять их местами!");
+                return;
+            }
+            int temp = myArr[m-1];
+            myArr[m-1] = myArr[n-1];
+            myArr[n-1] = temp;
+        }
+
+
+
+
+
+        /* Метод для пользователя - запрос на введение значений 
+                    и проверка корректности ввода значения для  целочисленых чисел
+                    и будет запрос до тех пор , пока не введет целочисленное значение*/
+        static void UserInput(string message, ref int variable) {
+            Write(message);
+            for (; ; ) {
+                try {
+                    variable = Convert.ToInt32(ReadLine());
+                    break;
+                }
+                catch {
+                    WriteLine("Вы ввели не целочиcленное значение, попробуйте еще раз: ");
+                    continue;
+                }
+            }
+        }
+
+
+
+
+
+
     }
 
 
