@@ -95,10 +95,27 @@ namespace Home_Work_4 {
                             "3) максимальное и минимальное из вещественных чисел. \n" );
                         UserInput("Введие Ваш выбор: ", ref a, 1, 3);  //запрашивает у пользователя выбор, где он может ввести только 1 , 2, 3
                         WriteLine(Task_21(a));
-                        
                         break;
-
-
+                    case 22:
+                        UserInput("Введи число A: ", ref a);
+                        UserInput("Введите число B( B должно быть > А ): ", ref b);
+                        if (a > b) {
+                            WriteLine("Согластно условию А должно быть менше В !!!");
+                            break;
+                        }
+                        Task_22(a, b, ref c, ref result);
+                        WriteLine("Сумма всех положительных чисел от {0} до {1} = {2}", a,b,c);
+                        WriteLine("Произведение всех положительных чисел от {0} до {1} = {2}", a, b, result);
+                        break;
+                    case 23:
+                        UserInput("Введи число A: ", ref a);
+                        UserInput("Введите число B( B должно быть > А ): ", ref b);
+                        if (a > b) {
+                            WriteLine("Согластно условию А должно быть менше В !!!");
+                            break;
+                        }
+                        Task_23(a, b);
+                        break;
 
 
                     default:
@@ -524,7 +541,7 @@ namespace Home_Work_4 {
 
             //цикл запроса ввода значений пользователя - количество значений - n
             for (int i = 0; i< 5; i++) {
-                Write("\nВведите вещественное число № {0} : ", i+1);
+                Write("Введите вещественное число № {0} : ", i+1);
                 try {
                     number = Convert.ToDouble(ReadLine());
                     strUserNumbers += number;
@@ -571,14 +588,33 @@ namespace Home_Work_4 {
                     strOutput += "Ваше минимальное значение: " + minValue + "\n";
                     strOutput += "Ваше максимальное значение: " + maxValue;
                     break;
-            }
-
-            
+            }           
 
             return strOutput;
         }
 
         /*22. Даны два целых числа A и B (A < B). Найти сумму и произведение всех целых чисел от A до B включительно*/
+        static void Task_22(int A, int B, ref int resultSumm, ref int resultMult) {
+            resultSumm = 0;
+            resultMult = 1;
+            for (int i = A; i<=B; i++ ) {
+                resultSumm += i;
+                resultMult *= i;
+            }
+        }
+
+        /* 23. Даны два целых числа A и B (A < B). 
+         * Вывести в порядке возрастания все целые числа, расположенные между A и B (включая сами числа A и B),
+         * а также количество N этих чисел.*/
+         static void Task_23 (int A, int B) {
+            int N = 0;
+            WriteLine($"Выведем в порядке возврастания числа в промежутке между {A} и {B} включительно: ");
+            for (int i = A; i <= B; i++) {
+                Write($"{i} ");
+                N++;
+            }
+            WriteLine($"Всего чисел : {N}");
+        }
 
         /*Task 3 и 4 - теоретические но выведется по запросу пользователя в качестве текста
          * 3. Если сделать объявление int i=11; чему будет равно значение выражения i / 5?*/
