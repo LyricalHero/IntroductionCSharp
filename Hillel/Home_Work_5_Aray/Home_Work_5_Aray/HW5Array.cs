@@ -76,14 +76,7 @@ namespace Home_Work_5_Aray {
 
 
         }
-
-        //отдельный метод в котором вся логика 5 задания вариант 2 (с двухмерными массивами)
-        static void MyProgramm_Part_Two() {
-
-
-
-        }
-
+        
         //метод, который выводит наш массив на экран
         static void Print_Arr(string srtUserMessage, int[] arr) {
             WriteLine(srtUserMessage);
