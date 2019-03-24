@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\Home_Work_4\\Home_Work_4\\Home_Work_4.csproj",
-      "projectName": "Home_Work_4",
-      "projectPath": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\Home_Work_4\\Home_Work_4\\Home_Work_4.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\FieldOfDreams\\FieldOfDreams\\FieldOfDreams.csproj",
+      "projectName": "FieldOfDreams",
+      "projectPath": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\FieldOfDreams\\FieldOfDreams\\FieldOfDreams.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\Home_Work_4\\Home_Work_4\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\FieldOfDreams\\FieldOfDreams\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

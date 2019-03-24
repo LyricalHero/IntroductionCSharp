@@ -1,0 +1,11 @@
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\bin\Debug\netcoreapp2.1\FieldOfDreams.deps.json
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\bin\Debug\netcoreapp2.1\FieldOfDreams.runtimeconfig.json
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\bin\Debug\netcoreapp2.1\FieldOfDreams.runtimeconfig.dev.json
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\bin\Debug\netcoreapp2.1\FieldOfDreams.dll
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\bin\Debug\netcoreapp2.1\FieldOfDreams.pdb
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.AssemblyInfo.cs
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.dll
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.pdb
