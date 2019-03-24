@@ -1,0 +1,11 @@
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\HomeWork_6_Double_Array\HomeWork_6_Double_Array\bin\Debug\netcoreapp2.1\HomeWork_6_Double_Array.deps.json
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\HomeWork_6_Double_Array\HomeWork_6_Double_Array\bin\Debug\netcoreapp2.1\HomeWork_6_Double_Array.runtimeconfig.json
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\HomeWork_6_Double_Array\HomeWork_6_Double_Array\bin\Debug\netcoreapp2.1\HomeWork_6_Double_Array.runtimeconfig.dev.json
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\HomeWork_6_Double_Array\HomeWork_6_Double_Array\bin\Debug\netcoreapp2.1\HomeWork_6_Double_Array.dll
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\HomeWork_6_Double_Array\HomeWork_6_Double_Array\bin\Debug\netcoreapp2.1\HomeWork_6_Double_Array.pdb
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\HomeWork_6_Double_Array\HomeWork_6_Double_Array\obj\Debug\netcoreapp2.1\HomeWork_6_Double_Array.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\HomeWork_6_Double_Array\HomeWork_6_Double_Array\obj\Debug\netcoreapp2.1\HomeWork_6_Double_Array.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\HomeWork_6_Double_Array\HomeWork_6_Double_Array\obj\Debug\netcoreapp2.1\HomeWork_6_Double_Array.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\HomeWork_6_Double_Array\HomeWork_6_Double_Array\obj\Debug\netcoreapp2.1\HomeWork_6_Double_Array.AssemblyInfo.cs
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\HomeWork_6_Double_Array\HomeWork_6_Double_Array\obj\Debug\netcoreapp2.1\HomeWork_6_Double_Array.dll
+C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\HomeWork_6_Double_Array\HomeWork_6_Double_Array\obj\Debug\netcoreapp2.1\HomeWork_6_Double_Array.pdb
