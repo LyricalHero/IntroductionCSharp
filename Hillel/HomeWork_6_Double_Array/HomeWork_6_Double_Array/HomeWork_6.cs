@@ -55,6 +55,14 @@ namespace HomeWork_6_Double_Array {
             //Task 4
             myPrintArray(arrTask3, index1, index2);
             myTask_4(arrTask3,index1,index2);
+            myEnd_Task();
+            //Task 5
+            myPrintArray(arrTask3, index1,index2);
+            myTask_5(arrTask3,index1,index2);
+            myEnd_Task();
+
+
+
 
         }
 
@@ -122,8 +130,7 @@ namespace HomeWork_6_Double_Array {
                 Write(myArr[2,i]+" ");
             }
             //пользователь выбирает столбец который будет выводить и важно что бы было корректное значение       
-            int k = UserSelectIndex("столбец",index2) ;
-            
+            int k = UserSelectIndex("столбец",index2) ;            
             //б) все элементы k-го столбца массива, начиная с нижнего элемента этого столбца.
             Write($"\nВыводим на экран все элементы {k}-го столбца массива, начиная с нижнего элемента этого столбца.");
             for (int i =index1-1; i>=0;i--) {
@@ -136,8 +143,23 @@ namespace HomeWork_6_Double_Array {
         /*5. Дан двумерный массив. Определить: 
          * а) сумму всех элементов третьей строки массива;
          * б) сумму всех элементов s-го столбца массива.
-*/
+         */
+         static void myTask_5(int[,] myArr, int index1, int index2) {
+            int sum = 0;
+            //а) сумму всех элементов третьей строки массива
+            for (int i =0; i< index2;i++) {
+                sum += myArr[2,i];
+            }
+            Write("\nСумма всех элементов 3-й строки массива: {0}", sum);
 
+            sum = 0;    //обнуляем переменную суммы
+            //б) сумму всех элементов s-го столбца массива.
+            int s = UserSelectIndex("столбец", index2);
+            for (int i = 0; i< index1;i++) {
+                sum += myArr[i,s-1];
+            }
+            Write("\nСумма всех элементов {0}-го столбца массива: {1}", s, sum);
+         }
 
 
 
@@ -177,6 +199,7 @@ namespace HomeWork_6_Double_Array {
 
         /*проверка корректного выбора столбца/строки массива(что бы пользователь не ввел 
             слишком большое значение и мы не вышли за пределы массива иначе будет жопа(словим ексепшн))
+            strIndex - для вывода сообщения пользователю что он выберает строку или столбец
          */
          static int UserSelectIndex(string strIndex,int index) {
             int value = 0;
