@@ -1,4 +1,5 @@
 ﻿ using System;
+using System.Linq;  // в нее помещен метод Sum() у массивов и т.д.
 using static System.Console;
 
 
@@ -59,6 +60,8 @@ namespace HomeWork_6_Double_Array {
             //Task 5
             myPrintArray(arrTask3, index1,index2);
             myTask_5(arrTask3,index1,index2);
+            // Task 6 выводим на примере того-же массива
+            myTask_6(arrTask3,index1,index2);
             myEnd_Task();
 
 
@@ -143,6 +146,7 @@ namespace HomeWork_6_Double_Array {
         /*5. Дан двумерный массив. Определить: 
          * а) сумму всех элементов третьей строки массива;
          * б) сумму всех элементов s-го столбца массива.
+         * нахождение суммы прописывал "ручками"
          */
          static void myTask_5(int[,] myArr, int index1, int index2) {
             int sum = 0;
@@ -161,7 +165,34 @@ namespace HomeWork_6_Double_Array {
             Write("\nСумма всех элементов {0}-го столбца массива: {1}", s, sum);
          }
 
+        /*6. Дан двумерный массив.
+         * Определить: а) сумму всех элементов второго столбца массива;
+         * б) сумму всех элементов k-й строки массива.
+         Окей, такое уже было, что бы ручками не прописывать все
+         я брал нужную строку(столбец) и записывал в новый массив
+         потом вычислял сумму через стандартный метод массивов Sum() */
+         static void myTask_6(int[,] myArr,int index1,int index2) {
+            //а) сумму всех элементов второго столбца массива
+            int sum = 0;
+            int[] buffArr1 = new int[index1];  ////массив кол-во элементов которого равно кол-ву строк
+            //заполняю новый одномерный массив значениями второго столбца массива
+            for (int i = 0;i < index1;i++) {
+                buffArr1[i] = myArr[i,1];
+            }
+            sum = buffArr1.Sum();
+            WriteLine($"\nСумма всех элементов 2-го столбца массива: {sum}");
 
+            //б) сумму всех элементов k-й строки массива.
+            int[] buffArr2 = new int[index2];   //массив кол-во элементов которого равно кол-ву столбцов
+            int k = UserSelectIndex("строку", index1);
+            //заполняю новый одномерный массив значениями k-й строки массива
+            for (int i = 0; i < index2; i++) {
+                buffArr2[i] = myArr[k-1, i];
+            }
+            sum = buffArr2.Sum();
+            WriteLine($"\nСумма всех элементов {k}-й строки массива: {sum}");
+
+        }
 
 
 
@@ -181,7 +212,8 @@ namespace HomeWork_6_Double_Array {
 
 
         /* Метод для пользователя - запрос на введение значений 
-            и проверка корректности ввода значения для  целочисленых чисел
+            и проверка к
+            орректности ввода значения для  целочисленых чисел
             и будет запрос до тех пор , пока не введет целочисленное значение*/
         static void UserInput(string message, ref int variable) {
             Write(message);
@@ -204,7 +236,7 @@ namespace HomeWork_6_Double_Array {
          static int UserSelectIndex(string strIndex,int index) {
             int value = 0;
             for (; ; ) {
-                UserInput($"Выберите {strIndex} массива (число меньше {index}): ", ref value);
+                UserInput($"\nВыберите {strIndex} массива (число меньше {index}): ", ref value);
                 if (value > index | value <= 0) {
                     WriteLine("Вы ввели некорректное значение!");
                     continue;
