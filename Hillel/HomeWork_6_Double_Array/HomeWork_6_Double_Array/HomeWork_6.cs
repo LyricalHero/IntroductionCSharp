@@ -17,53 +17,60 @@ namespace HomeWork_6_Double_Array {
             //создаем массив для наглядности из 5х5
             int index1 = 5, index2 = 5;
             int[,] arr = new int[index1,index2];
-            //заполняем его случайными значениями[10 - 99] и выводим на экран
-            mySet_Array(arr, index1, index2);
-            myPrintArray(arr,index1,index2);
-            /*Task1. Дан двумерный массив. а) Вывести на экран элемент, расположенный в правом верхнем углу массива. 
-          б) Вывести на экран элемент, расположенный в левом нижнем углу массива.*/
-            //а)выводим на экран элемент, расположенный в правом верхнем углу массива.
-            //т.е это элемент 1й строки последнего столбца
-            WriteLine("Элемент, расположенный в правом верхнем углу массива: {0}", arr[0,index2-1]);
-            // б) Вывести на экран элемент, расположенный в левом нижнем углу массива.
-            // т.е. это элемент 1й столбца последней строки
-            WriteLine("Элемент, расположенный в левом нижнем углу массива: {0}", arr[index1-1, 0]);
-            //очищаем консоль и еще раз выводим наш массив:
-            myEnd_Task();
-            myPrintArray(arr, index1, index2);
+          //  //заполняем его случайными значениями[10 - 99] и выводим на экран
+          //  mySet_Array(arr, index1, index2);
+          //  myPrintArray(arr, index1, index2);
+          //  /*Task1. Дан двумерный массив. а) Вывести на экран элемент, расположенный в правом верхнем углу массива. 
+          //б) Вывести на экран элемент, расположенный в левом нижнем углу массива.*/
+          //  //а)выводим на экран элемент, расположенный в правом верхнем углу массива.
+          //  //т.е это элемент 1й строки последнего столбца
+          //  WriteLine("Элемент, расположенный в правом верхнем углу массива: {0}", arr[0, index2 - 1]);
+          //  // б) Вывести на экран элемент, расположенный в левом нижнем углу массива.
+          //  // т.е. это элемент 1й столбца последней строки
+          //  WriteLine("Элемент, расположенный в левом нижнем углу массива: {0}", arr[index1 - 1, 0]);
+          //  //очищаем консоль и еще раз выводим наш массив:
+          //  myEnd_Task();
+          //  myPrintArray(arr, index1, index2);
 
-            //Task2 -a заменяем значение любого элемента пятой строки двумерного массива числом 1949
-            //и выводим на экран новый массив
-            myTask_2(arr,index1,index2,false);
-            WriteLine("Мы заменили значение любого элемента пятой строки двумерного массива числом 1949");
-            myPrintArray(arr, index1,index2);
+          //  //Task2 -a заменяем значение любого элемента пятой строки двумерного массива числом 1949
+          //  //и выводим на экран новый массив
+          //  myTask_2(arr, index1, index2, false);
+          //  WriteLine("Мы заменили значение любого элемента пятой строки двумерного массива числом 1949");
+          //  myPrintArray(arr, index1, index2);
 
-            //Task 2 - b заменяющую значение любого элемента двумерного массива числом a
-            myTask_2(arr, index1, index2, true);
-            WriteLine("Мы заменили значение любого элемента  двумерного массива Вашим числом ");
-            myPrintArray(arr, index1, index2);
+          //  //Task 2 - b заменяющую значение любого элемента двумерного массива числом a
+          //  myTask_2(arr, index1, index2, true);
+          //  WriteLine("Мы заменили значение любого элемента  двумерного массива Вашим числом ");
+          //  myPrintArray(arr, index1, index2);
 
-            myEnd_Task();
-            //создаем новый массив 8х8 для таска 3
-            index1 = 9;
-            index2 = 9;
-            int[,] arrTask3 = new int[index1, index2];
-            //заполняем массив значениями
-            myTask_3(arrTask3, index1, index2);
-            WriteLine("Заполнили двумерный массив результатом таблицы умножения от 1 до 9");
-            myPrintArray(arrTask3, index1, index2);
-            myEnd_Task();
-            //Task 4
-            myPrintArray(arrTask3, index1, index2);
-            myTask_4(arrTask3,index1,index2);
-            myEnd_Task();
-            //Task 5
-            myPrintArray(arrTask3, index1,index2);
-            myTask_5(arrTask3,index1,index2);
-            // Task 6 выводим на примере того-же массива
-            myTask_6(arrTask3,index1,index2);
-            myEnd_Task();
-
+          //  myEnd_Task();
+          //  //создаем новый массив 8х8 для таска 3
+          //  index1 = 9;
+          //  index2 = 9;
+          //  int[,] arrTask3 = new int[index1, index2];
+          //  //заполняем массив значениями
+          //  myTask_3(arrTask3, index1, index2);
+          //  WriteLine("Заполнили двумерный массив результатом таблицы умножения от 1 до 9");
+          //  myPrintArray(arrTask3, index1, index2);
+          //  myEnd_Task();
+          //  //Task 4
+          //  myPrintArray(arrTask3, index1, index2);
+          //  myTask_4(arrTask3, index1, index2);
+          //  myEnd_Task();
+          //  //Task 5
+          //  myPrintArray(arrTask3, index1, index2);
+          //  myTask_5(arrTask3, index1, index2);
+          //  // Task 6 выводим на примере того-же массива
+          //  myTask_6(arrTask3, index1, index2);
+          //  myEnd_Task();
+            //создам новый массив 4х4 , и на его примере буду выводить результаты следующих тасков
+            index1 = 4;
+            index2 = 4;
+            int[,] myNewArr = new int[index1,index2];
+            mySet_Array(myNewArr, index1, index2);
+            myPrintArray(myNewArr, index1,index2);
+            //Task 7
+            myTask_7(myNewArr,index1,index2);
 
 
 
@@ -194,6 +201,26 @@ namespace HomeWork_6_Double_Array {
 
         }
 
+        /*7. Дан двумерный массив. Определить: 
+         * а) сумму квадратов элементов второй строки массива; 
+         * б) сумму квадратов элементов c-го столбца массива
+         Единственное что - массив целочисленное*/
+        static void myTask_7(int[,] myArr,int index1,int index2) {
+            int sumPow = 0;
+            //а) сумму квадратов элементов второй строки массива
+            for (int i=0; i< index2; i++) {
+                sumPow += myArr[1,i]*myArr[1,i];
+            }
+            Write($"\nСумма квадратов элементов 2-й строки массива: {sumPow}");
+            //б) сумму квадратов элементов c-го столбца массива
+            sumPow = 0;         // обнуляем сумму
+            int c = UserSelectIndex("столбец",index2);
+            for (int i=0;i<index1;i++) {
+                sumPow += myArr[i,c-1] * myArr[i,c-1];
+            }
+            Write($"\nСумма квадратов элементов {c}-го столбца массива: {sumPow}");
+
+        }
 
 
 
