@@ -17,62 +17,77 @@ namespace HomeWork_6_Double_Array {
             //создаем массив для наглядности из 5х5
             int index1 = 5, index2 = 5;
             int[,] arr = new int[index1,index2];
-          //  //заполняем его случайными значениями[10 - 99] и выводим на экран
-          //  mySet_Array(arr, index1, index2);
-          //  myPrintArray(arr, index1, index2);
-          //  /*Task1. Дан двумерный массив. а) Вывести на экран элемент, расположенный в правом верхнем углу массива. 
-          //б) Вывести на экран элемент, расположенный в левом нижнем углу массива.*/
-          //  //а)выводим на экран элемент, расположенный в правом верхнем углу массива.
-          //  //т.е это элемент 1й строки последнего столбца
-          //  WriteLine("Элемент, расположенный в правом верхнем углу массива: {0}", arr[0, index2 - 1]);
-          //  // б) Вывести на экран элемент, расположенный в левом нижнем углу массива.
-          //  // т.е. это элемент 1й столбца последней строки
-          //  WriteLine("Элемент, расположенный в левом нижнем углу массива: {0}", arr[index1 - 1, 0]);
-          //  //очищаем консоль и еще раз выводим наш массив:
-          //  myEnd_Task();
-          //  myPrintArray(arr, index1, index2);
+            //  //заполняем его случайными значениями[10 - 99] и выводим на экран
+            //  mySet_Array(arr, index1, index2);
+            //  myPrintArray(arr, index1, index2);
+            //  /*Task1. Дан двумерный массив. а) Вывести на экран элемент, расположенный в правом верхнем углу массива. 
+            //б) Вывести на экран элемент, расположенный в левом нижнем углу массива.*/
+            //  //а)выводим на экран элемент, расположенный в правом верхнем углу массива.
+            //  //т.е это элемент 1й строки последнего столбца
+            //  WriteLine("Элемент, расположенный в правом верхнем углу массива: {0}", arr[0, index2 - 1]);
+            //  // б) Вывести на экран элемент, расположенный в левом нижнем углу массива.
+            //  // т.е. это элемент 1й столбца последней строки
+            //  WriteLine("Элемент, расположенный в левом нижнем углу массива: {0}", arr[index1 - 1, 0]);
+            //  //очищаем консоль и еще раз выводим наш массив:
+            //  myEnd_Task();
+            //  myPrintArray(arr, index1, index2);
 
-          //  //Task2 -a заменяем значение любого элемента пятой строки двумерного массива числом 1949
-          //  //и выводим на экран новый массив
-          //  myTask_2(arr, index1, index2, false);
-          //  WriteLine("Мы заменили значение любого элемента пятой строки двумерного массива числом 1949");
-          //  myPrintArray(arr, index1, index2);
+            //  //Task2 -a заменяем значение любого элемента пятой строки двумерного массива числом 1949
+            //  //и выводим на экран новый массив
+            //  myTask_2(arr, index1, index2, false);
+            //  WriteLine("Мы заменили значение любого элемента пятой строки двумерного массива числом 1949");
+            //  myPrintArray(arr, index1, index2);
 
-          //  //Task 2 - b заменяющую значение любого элемента двумерного массива числом a
-          //  myTask_2(arr, index1, index2, true);
-          //  WriteLine("Мы заменили значение любого элемента  двумерного массива Вашим числом ");
-          //  myPrintArray(arr, index1, index2);
+            //  //Task 2 - b заменяющую значение любого элемента двумерного массива числом a
+            //  myTask_2(arr, index1, index2, true);
+            //  WriteLine("Мы заменили значение любого элемента  двумерного массива Вашим числом ");
+            //  myPrintArray(arr, index1, index2);
 
-          //  myEnd_Task();
-          //  //создаем новый массив 8х8 для таска 3
-          //  index1 = 9;
-          //  index2 = 9;
-          //  int[,] arrTask3 = new int[index1, index2];
-          //  //заполняем массив значениями
-          //  myTask_3(arrTask3, index1, index2);
-          //  WriteLine("Заполнили двумерный массив результатом таблицы умножения от 1 до 9");
-          //  myPrintArray(arrTask3, index1, index2);
-          //  myEnd_Task();
-          //  //Task 4
-          //  myPrintArray(arrTask3, index1, index2);
-          //  myTask_4(arrTask3, index1, index2);
-          //  myEnd_Task();
-          //  //Task 5
-          //  myPrintArray(arrTask3, index1, index2);
-          //  myTask_5(arrTask3, index1, index2);
-          //  // Task 6 выводим на примере того-же массива
-          //  myTask_6(arrTask3, index1, index2);
-          //  myEnd_Task();
-            //создам новый массив 4х4 , и на его примере буду выводить результаты следующих тасков
-            index1 = 4;
-            index2 = 4;
-            int[,] myNewArr = new int[index1,index2];
-            mySet_Array(myNewArr, index1, index2);
-            myPrintArray(myNewArr, index1,index2);
-            //Task 7
-            myTask_7(myNewArr,index1,index2);
-            //Task 8
-            myTask_8_9(myNewArr, index1, index2);
+            //  myEnd_Task();
+            //  //создаем новый массив 8х8 для таска 3
+            //  index1 = 9;
+            //  index2 = 9;
+            //  int[,] arrTask3 = new int[index1, index2];
+            //  //заполняем массив значениями
+            //  myTask_3(arrTask3, index1, index2);
+            //  WriteLine("Заполнили двумерный массив результатом таблицы умножения от 1 до 9");
+            //  myPrintArray(arrTask3, index1, index2);
+            //  myEnd_Task();
+            //  //Task 4
+            //  myPrintArray(arrTask3, index1, index2);
+            //  myTask_4(arrTask3, index1, index2);
+            //  myEnd_Task();
+            //  //Task 5
+            //  myPrintArray(arrTask3, index1, index2);
+            //  myTask_5(arrTask3, index1, index2);
+            //  // Task 6 выводим на примере того-же массива
+            //  myTask_6(arrTask3, index1, index2);
+            //  myEnd_Task();
+            ////создам новый массив 4х4 , и на его примере буду выводить результаты следующих тасков
+            //index1 = 4;
+            //index2 = 4;
+            //int[,] myNewArr = new int[index1, index2];
+            //mySet_Array(myNewArr, index1, index2);
+            //myPrintArray(myNewArr, index1, index2);
+            ////Task 7
+            //myTask_7(myNewArr, index1, index2);
+            ////Task 8 and 9
+            //myTask_8_9(myNewArr, index1, index2);
+            //myEnd_Task();
+            //Task 10
+            int index = 0;
+            for (; ; ) {    //цикл проверки ввода  нечетного числа
+                UserInput("Введите целое нечетное число n для размерности масивва n x n: ",ref index);
+                if(index%2 == 0) {
+                    WriteLine("Вы ввели четное число, попробуйте еще раз!");
+                } else {
+                    break;
+                }
+            }
+            char[,] arrTask10 = new char[index, index];
+            myTask_10(arrTask10, index);
+            myEnd_Task();
+
 
 
 
@@ -232,13 +247,12 @@ namespace HomeWork_6_Double_Array {
         * Если таких элементов несколько, то выводится тот, у которого меньше номер строки, 
         * а если номера строк равны то тот, у которого меньше номер столбца.
         Сделал оба таска в одном методе что бы не писать лишний код*/
-
         static void myTask_8_9(int[,] myArr,int index1, int index2) {
             int max = myArr[0, 0];
             int min = myArr[0,0];
             int mini = 0, minj = 0;
             int maxi = 0, maxj = 0;
-            bool flag = false;
+            
             //циклы перебора каждого элемента массива
             for (int i=0;i<index1;i++) {
                 for (int j=0; j<index2;j++) {
@@ -285,7 +299,47 @@ namespace HomeWork_6_Double_Array {
 
         }
 
-        
+        /*10. Дано нечетное число n. Создайте двумерный массив из n x n элементов, заполнив его символами "." 
+         * (каждый элемент массива является строкой из одного символа). 
+         * Затем заполните символами "*" среднюю строку массива, средний столбец массива, 
+         * главную диагональ и побочную диагональ.
+         * В результате единицы в массиве должны образовывать изображение звездочки.*/
+        static void myTask_10(char[,] myArr, int index) {
+            //Заполняем массив "."
+            for(int i=0; i< index; i++) {
+                for (int j = 0; j< index; j++) {
+                    myArr[i, j] = '.';                    
+                }
+            }
+            //заполняем массив "*"
+            for (int i = 0; i < index; i++) {
+                for (int j = 0; j < index; j++) {
+                    //средняя строчка массива
+                    if (i==(index/2)) {
+                        myArr[i, j] = '*';
+                    }
+                    //средний столюец массива
+                    if (j == index / 2 ) {
+                        myArr[i, j] = '*';
+                    }
+                    //главная диагональ
+                    if (i==j) {
+                        myArr[i, j] = '*';
+                    }
+                    //побочная диагональ
+                    if (j == index-1-i) {
+                        myArr[i, j] = '*';
+                    }
+                }
+            }
+            //выводим заполненый массив
+            for (int i =0; i< index; i++) {
+                for (int j = 0; j< index; j++) {
+                    Write(myArr[i,j]+" ");
+                }
+                WriteLine();
+            }
+        }
 
 
 
