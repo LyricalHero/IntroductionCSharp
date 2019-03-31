@@ -74,19 +74,19 @@ namespace HomeWork_6_Double_Array {
             ////Task 8 and 9
             //myTask_8_9(myNewArr, index1, index2);
             //myEnd_Task();
-            //Task 10
-            int index = 0;
-            for (; ; ) {    //цикл проверки ввода  нечетного числа
-                UserInput("Введите целое нечетное число n для размерности масивва n x n: ",ref index);
-                if(index%2 == 0) {
-                    WriteLine("Вы ввели четное число, попробуйте еще раз!");
-                } else {
-                    break;
-                }
-            }
-            char[,] arrTask10 = new char[index, index];
-            myTask_10(arrTask10, index);
-            myEnd_Task();
+            ////Task 10
+            //int index = 0;
+            //for (; ; ) {    //цикл проверки ввода  нечетного числа
+            //    UserInput("Введите целое нечетное число n для размерности масивва n x n: ",ref index);
+            //    if(index%2 == 0) {
+            //        WriteLine("Вы ввели четное число, попробуйте еще раз!");
+            //    } else {
+            //        break;
+            //    }
+            //}
+            //char[,] arrTask10 = new char[index, index];
+            //myTask_10(arrTask10, index);
+            //myEnd_Task();
 
 
 
@@ -389,11 +389,33 @@ namespace HomeWork_6_Double_Array {
         }
 
 
+        /*13. Риализовать диагностическую программу, которая протестирует различне алгоритмы сортировки 
+         * (реализовать самостоятельно - сортировка пузырьком, сортировка вставками, сортировка выборкой;
+         * использовать готовую сортировку, встроенную в стандартный функционал) на скорость работы с 
+         * 1000, 100000, 1000000, 1000000000 элементов случайных чисел. 
+         * Использовать Stopwatch из пространства имен -> System.Diagnostice;*/
 
+        //метод заполнения массива случайными числамиот 10 до 999 включительно - перегруженный метод как и для заполнения двумерного массива
+        static void mySet_Array(int[] myArr, int index) {
+            for(int i =0; i< index; i++) {
+                myArr[i] = new Random().Next(10, 1000);
+                System.Threading.Thread.Sleep(5); 
+            }
+        }
 
+        //сортировка пузырьком
+        //
+        static void myBubbleSort(int[] myArr) {
+            uint arrLength= Convert.ToUInt32( myArr.Length);
+            int temp = 0;
+            for(int i = 0; i < arrLength-1; i++) {
+                for(int j =0; j < arrLength - i - 1; j++)
+                if (myArr[i]>myArr[i+1]) {
 
+                }
+            }
 
-
+        }
 
 
 
@@ -403,3 +425,4 @@ namespace HomeWork_6_Double_Array {
     }
 
 }
+ 
