@@ -88,6 +88,13 @@ namespace HomeWork_6_Double_Array {
             //myTask_10(arrTask10, index);
             //myEnd_Task();
 
+            //task 13
+
+            byte[] myArrBubleSort = new byte[10];
+            mySet_Array(myArrBubleSort, 10);
+            myPrintArray(myArrBubleSort);
+            myBubbleSort(myArrBubleSort);
+            myPrintArray(myArrBubleSort);
 
 
 
@@ -396,29 +403,47 @@ namespace HomeWork_6_Double_Array {
          * Использовать Stopwatch из пространства имен -> System.Diagnostice;*/
 
         //метод заполнения массива случайными числамиот 10 до 999 включительно - перегруженный метод как и для заполнения двумерного массива
-        static void mySet_Array(int[] myArr, int index) {
+        static void mySet_Array(byte[] myArr, int index) {
             for(int i =0; i< index; i++) {
-                myArr[i] = new Random().Next(10, 1000);
-                System.Threading.Thread.Sleep(5); 
+                myArr[i] =Convert.ToByte( new Random().Next(1, 256));
+              //  System.Threading.Thread.Sleep(5); 
             }
+            
+            WriteLine("set");
         }
 
         //сортировка пузырьком
         //
-        static void myBubbleSort(int[] myArr) {
-            uint arrLength= Convert.ToUInt32( myArr.Length);
-            int temp = 0;
-            for(int i = 0; i < arrLength-1; i++) {
-                for(int j =0; j < arrLength - i - 1; j++)
-                if (myArr[i]>myArr[i+1]) {
-
+        static void myBubbleSort(byte[] myArr) {
+           byte temp = 0;
+            //засекаю время непосредственно перед самим алгоритмом 
+            System.Diagnostics.Stopwatch time = new System.Diagnostics.Stopwatch();
+            time.Start();
+            //внешний цикл по общему проду по элементов
+            //кол-во проходов = кол-во элементов - 1
+            //по завершению каждого внешнего прохода на последней и т.д. позиции будет максимальный элемент            
+            for (int i = 0; i < myArr.Length-1; i++) {  
+                for(int j =0; j < myArr.Length - i - 1; j++)
+                if (myArr[j]>myArr[j+1]) {
+                        temp = myArr[j];
+                        myArr[j] = myArr[j + 1];
+                        myArr[j + 1] = temp;
                 }
             }
+            time.Stop();
+                        
+            WriteLine(time.ElapsedMilliseconds);
 
         }
 
-
-
+        //метод для вывода одномерного массива(для проверки отработки сортировки)
+        //он же перегруженный метод вывода двумерного массива
+        static void myPrintArray(byte[] myArr) {
+            for (int i = 0; i < myArr.Length; i++) {
+                Write(myArr[i] + " ");
+            }
+            WriteLine();
+        }
 
 
 
