@@ -475,8 +475,8 @@ namespace HomeWork_6_Double_Array {
          * Использовать Stopwatch из пространства имен -> System.Diagnostice;*/
 
         //метод заполнения массива случайными числами от 10 до 255 включительно - перегруженный метод как и для заполнения двумерного массива
-        static void mySet_Array(byte[] myArr, long index) {
-            for(int i =0; i< index; i++) {
+        static void mySet_Array(byte[] myArr) {
+            for(int i =0; i< myArr.Length; i++) {
                 myArr[i] =Convert.ToByte( new Random().Next(1, 255));
               
             }
@@ -484,7 +484,8 @@ namespace HomeWork_6_Double_Array {
 
         //сортировка пузырьком
         //
-        static void myBubbleSort(byte[] myArr) {
+        static void myBubbleSort(byte[] myArray) {
+           byte[] myArr = myArray;
            byte temp = 0;
             //засекаю время непосредственно перед самим алгоритмом 
             System.Diagnostics.Stopwatch time = new System.Diagnostics.Stopwatch();
@@ -510,7 +511,8 @@ namespace HomeWork_6_Double_Array {
 
         //Сортировка вставками
         //
-        static void myInsertSort(byte[] myArr) {
+        static void myInsertSort(byte[] myArray) {
+            byte[] myArr = myArray;
             byte temp = 0;  //для хранения значения 
             //засекаю время непосредственно перед самим алгоритмом 
             System.Diagnostics.Stopwatch time = new System.Diagnostics.Stopwatch();
@@ -536,7 +538,8 @@ namespace HomeWork_6_Double_Array {
 
         //сортировка выборкой
         //
-        static void mySampleSort(byte[] myArr) {
+        static void mySampleSort(byte[] myArray) {
+            byte[] myArr = myArray;
             int indexmin =0;   //для хранения индекса минимального элемента
             byte temp = 0;
             //засекаю время непосредственно перед самим алгоритмом 
@@ -568,7 +571,8 @@ namespace HomeWork_6_Double_Array {
 
         //готовая сортировка 
         //
-        static void myReadySort(byte[] myArr) {
+        static void myReadySort(byte[] myArray) {
+            byte[] myArr = myArray;
             //засекаю время непосредственно перед самим алгоритмом 
             System.Diagnostics.Stopwatch time = new System.Diagnostics.Stopwatch();
             time.Start();
@@ -584,6 +588,12 @@ namespace HomeWork_6_Double_Array {
 
         //метод в котором вся логика 13 таска с сортировками
         static void myLogicTask13() {
+            long numbersElement = 1000;
+
+            // создаем, заполняем, и измеряем сортировки для массивов на 1000 элементов
+            byte[] myArr1000 = new byte[numbersElement];
+            mySet_Array(myArr1000);
+
 
         }
 
