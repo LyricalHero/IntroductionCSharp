@@ -3,7 +3,7 @@
 using static System.Console;
 
 namespace Lesson8 {
-    class Program {
+    class Lessn8 {
         static void Main(string[] args) {
 
 
