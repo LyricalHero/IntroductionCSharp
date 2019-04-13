@@ -99,27 +99,36 @@ namespace HomeWork_6_Double_Array {
             //WriteLine("Наш массив после того, как поменяли элементы на главной и побочной диагонали:\n ");
             //myPrintArray(myArrTask11, 7, 7);
             //myEnd_Task();
-            //task 12
-            int index_1_task12 = 0, index_2_task12 = 0;
-            UserInput("введите индекс для двумерного массива i: ", ref index_1_task12);
-            UserInput("введите индекс для двумерного массива j: ", ref index_2_task12);
-            //создаем массив и заполняем случайными значениями
-            int[,] myarrtask12 = new int[index_1_task12, index_2_task12];
-            mySet_Array(myarrtask12, index_1_task12, index_2_task12);
-            myPrintArray(myarrtask12, index_1_task12, index_2_task12);
-            int[,] myNewArrTask12 = myTask_12(myarrtask12, index_1_task12, index_2_task12);
-            WriteLine("наш массив после того, как мы повернули его на 90 градусов по часовой стрелке: \n");
-            myPrintArray(myNewArrTask12, index_2_task12, index_1_task12);
+            ////task 12
+            //int index_1_task12 = 0, index_2_task12 = 0;
+            //UserInput("введите индекс для двумерного массива i: ", ref index_1_task12);
+            //UserInput("введите индекс для двумерного массива j: ", ref index_2_task12);
+            ////создаем массив и заполняем случайными значениями
+            //int[,] myarrtask12 = new int[index_1_task12, index_2_task12];
+            //mySet_Array(myarrtask12, index_1_task12, index_2_task12);
+            //myPrintArray(myarrtask12, index_1_task12, index_2_task12);
+            //int[,] myNewArrTask12 = myTask_12(myarrtask12, index_1_task12, index_2_task12);
+            //WriteLine("наш массив после того, как мы повернули его на 90 градусов по часовой стрелке: \n");
+            //myPrintArray(myNewArrTask12, index_2_task12, index_1_task12);
 
 
             //task 13
 
-            long indexSortArr = 1000;
-            byte[] myArrBubleSort = new byte[indexSortArr];
-            mySet_Array(myArrBubleSort, indexSortArr);
-            //myPrintArray(myArrBubleSort);
-            myBubbleSort(myArrBubleSort);
-            
+            long indexSortArr = 30;
+            //byte[] myArrBubleSort = new byte[indexSortArr];
+            //mySet_Array(myArrBubleSort, indexSortArr);
+            ////myPrintArray(myArrBubleSort);
+            //myBubbleSort(myArrBubleSort);
+            //byte[] myArrInsertSort = new byte[indexSortArr];
+            //mySet_Array(myArrInsertSort, indexSortArr);
+            //myPrintArray(myArrInsertSort);
+            //myInsertSort(myArrInsertSort);
+            //myPrintArray(myArrInsertSort);
+            byte[] myArrSampleSort = new byte[indexSortArr];
+            mySet_Array(myArrSampleSort, indexSortArr);
+            myPrintArray(myArrSampleSort);
+            mySampleSort(myArrSampleSort);
+            myPrintArray(myArrSampleSort);
 
 
 
@@ -511,6 +520,66 @@ namespace HomeWork_6_Double_Array {
 
         }
 
+        //Сортировка вставками
+        //
+        static void myInsertSort(byte[] myArr) {
+            byte temp = 0;  //для хранения значения 
+            //засекаю время непосредственно перед самим алгоритмом 
+            System.Diagnostics.Stopwatch time = new System.Diagnostics.Stopwatch();
+            time.Start();
+            //Алгоритм сортировки вставками
+            for(int i = 1; i<myArr.Length; i++) {   //начинаем со 2го элемент
+                for(int j =i; j > 0; j--) {      //проходим по предыдущим элементам массива, и вставляем наш элемент на нужную позицию
+                    //ecли предыдущий элемент больше текущего то меняем их местами
+                    if (myArr[j-1] > myArr[j]) {
+                        temp = myArr[j];
+                        myArr[j] = myArr[j - 1];
+                        myArr[j - 1] = temp;
+                        
+                    }
+                }
+            }
+            time.Stop();
+            long milisec = time.ElapsedMilliseconds;
+            string strOutput = $"Сортировка вставками на {myArr.Length} элементов длится {milisec} милисекунд или" +
+                $" {milisec / 1000} секунд.";
+            WriteLine(strOutput);                       
+        }
+
+        //сортировка выборкой
+        //
+        static void mySampleSort(byte[] myArr) {
+            int indexmin =0;   //для хранения индекса минимального элемента
+            byte temp = 0;
+            //засекаю время непосредственно перед самим алгоритмом 
+            System.Diagnostics.Stopwatch time = new System.Diagnostics.Stopwatch();
+            time.Start();
+            //Алгоритм сортировки выборкой
+            for (int i=0;i<myArr.Length-1;i++) {
+                indexmin = i;  //минимальный элемент
+                //поиск минимального элемента в массиве
+                for(int j = i + 1;j< myArr.Length;j++) {
+                    if (myArr[j] < myArr[indexmin]) {
+                        indexmin = j;
+                    }
+                }
+                //меняем элементы местами(мин. элемент ставим на нужную позицию)
+                temp = myArr[i];
+                myArr[i] = myArr[indexmin];
+                myArr[indexmin] = temp;
+            }
+
+            time.Stop();
+            long milisec = time.ElapsedMilliseconds;
+            string strOutput = $"Сортировка выборкой на {myArr.Length} элементов длится {milisec} милисекунд или" +
+                $" {milisec / 1000} секунд.";
+            WriteLine(strOutput);
+
+
+        }
+
+
+
         //метод для вывода одномерного массива(для проверки отработки сортировки)
         //он же перегруженный метод вывода двумерного массива
         static void myPrintArray(byte[] myArr) {
@@ -519,9 +588,6 @@ namespace HomeWork_6_Double_Array {
             }
             WriteLine();
         }
-
-
-
     }
 
 }
