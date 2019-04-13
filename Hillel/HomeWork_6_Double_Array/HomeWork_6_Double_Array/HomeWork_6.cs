@@ -8,7 +8,10 @@ using static System.Console;
 namespace HomeWork_6_Double_Array {
     class HomeWork_6 {
         static void Main(string[] args) {
-            LogicProgramm();
+            //LogicProgramm();
+
+            //task 13
+            myLogicTask13();
 
             ReadLine();
         }
@@ -17,123 +20,108 @@ namespace HomeWork_6_Double_Array {
             //создаем массив для наглядности из 5х5
             int index1 = 5, index2 = 5;
             int[,] arr = new int[index1,index2];
-            //  //заполняем его случайными значениями[10 - 99] и выводим на экран
-            //  mySet_Array(arr, index1, index2);
-            //  myPrintArray(arr, index1, index2);
-            //  /*Task1. Дан двумерный массив. а) Вывести на экран элемент, расположенный в правом верхнем углу массива. 
-            //б) Вывести на экран элемент, расположенный в левом нижнем углу массива.*/
-            //  //а)выводим на экран элемент, расположенный в правом верхнем углу массива.
-            //  //т.е это элемент 1й строки последнего столбца
-            //  WriteLine("Элемент, расположенный в правом верхнем углу массива: {0}", arr[0, index2 - 1]);
-            //  // б) Вывести на экран элемент, расположенный в левом нижнем углу массива.
-            //  // т.е. это элемент 1й столбца последней строки
-            //  WriteLine("Элемент, расположенный в левом нижнем углу массива: {0}", arr[index1 - 1, 0]);
-            //  //очищаем консоль и еще раз выводим наш массив:
-            //  myEnd_Task();
-            //  myPrintArray(arr, index1, index2);
+            //заполняем его случайными значениями[10 - 99] и выводим на экран
+            mySet_Array(arr, index1, index2);
+            myPrintArray(arr, index1, index2);
+            /*Task1. Дан двумерный массив. а) Вывести на экран элемент, расположенный в правом верхнем углу массива. 
+          б) Вывести на экран элемент, расположенный в левом нижнем углу массива.*/
+            //а)выводим на экран элемент, расположенный в правом верхнем углу массива.
+            //т.е это элемент 1й строки последнего столбца
+            WriteLine("Элемент, расположенный в правом верхнем углу массива: {0}", arr[0, index2 - 1]);
+            // б) Вывести на экран элемент, расположенный в левом нижнем углу массива.
+            // т.е. это элемент 1й столбца последней строки
+            WriteLine("Элемент, расположенный в левом нижнем углу массива: {0}", arr[index1 - 1, 0]);
+            //очищаем консоль и еще раз выводим наш массив:
+            myEnd_Task();
+            myPrintArray(arr, index1, index2);
 
-            //  //Task2 -a заменяем значение любого элемента пятой строки двумерного массива числом 1949
-            //  //и выводим на экран новый массив
-            //  myTask_2(arr, index1, index2, false);
-            //  WriteLine("Мы заменили значение любого элемента пятой строки двумерного массива числом 1949");
-            //  myPrintArray(arr, index1, index2);
+            //Task2 -a заменяем значение любого элемента пятой строки двумерного массива числом 1949
+            //и выводим на экран новый массив
+            myTask_2(arr, index1, index2, false);
+            WriteLine("Мы заменили значение любого элемента пятой строки двумерного массива числом 1949");
+            myPrintArray(arr, index1, index2);
 
-            //  //Task 2 - b заменяющую значение любого элемента двумерного массива числом a
-            //  myTask_2(arr, index1, index2, true);
-            //  WriteLine("Мы заменили значение любого элемента  двумерного массива Вашим числом ");
-            //  myPrintArray(arr, index1, index2);
+            //Task 2 - b заменяющую значение любого элемента двумерного массива числом a
+            myTask_2(arr, index1, index2, true);
+            WriteLine("Мы заменили значение любого элемента  двумерного массива Вашим числом ");
+            myPrintArray(arr, index1, index2);
 
-            //  myEnd_Task();
-            //  //создаем новый массив 8х8 для таска 3
-            //  index1 = 9;
-            //  index2 = 9;
-            //  int[,] arrTask3 = new int[index1, index2];
-            //  //заполняем массив значениями
-            //  myTask_3(arrTask3, index1, index2);
-            //  WriteLine("Заполнили двумерный массив результатом таблицы умножения от 1 до 9");
-            //  myPrintArray(arrTask3, index1, index2);
-            //  myEnd_Task();
-            //  //Task 4
-            //  myPrintArray(arrTask3, index1, index2);
-            //  myTask_4(arrTask3, index1, index2);
-            //  myEnd_Task();
-            //  //Task 5
-            //  myPrintArray(arrTask3, index1, index2);
-            //  myTask_5(arrTask3, index1, index2);
-            //  // Task 6 выводим на примере того-же массива
-            //  myTask_6(arrTask3, index1, index2);
-            //  myEnd_Task();
-            ////создам новый массив 4х4 , и на его примере буду выводить результаты следующих тасков
-            //index1 = 4;
-            //index2 = 4;
-            //int[,] myNewArr = new int[index1, index2];
-            //mySet_Array(myNewArr, index1, index2);
-            //myPrintArray(myNewArr, index1, index2);
-            ////Task 7
-            //myTask_7(myNewArr, index1, index2);
-            ////Task 8 and 9
-            //myTask_8_9(myNewArr, index1, index2);
-            //myEnd_Task();
-            ////Task 10
-            //int index = 0;
-            //for (; ; ) {    //цикл проверки ввода  нечетного числа
-            //    UserInput("Введите целое нечетное число n для размерности масивва n x n: ",ref index);
-            //    if(index%2 == 0) {
-            //        WriteLine("Вы ввели четное число, попробуйте еще раз!");
-            //    } else {
-            //        break;
-            //    }
-            //}
-            //char[,] arrTask10 = new char[index, index];
-            //myTask_10(arrTask10, index);
-            //myEnd_Task();
+            myEnd_Task();
+            //создаем новый массив 8х8 для таска 3
+            index1 = 9;
+            index2 = 9;
+            int[,] arrTask3 = new int[index1, index2];
+            //заполняем массив значениями
+            myTask_3(arrTask3, index1, index2);
+            WriteLine("Заполнили двумерный массив результатом таблицы умножения от 1 до 9");
+            myPrintArray(arrTask3, index1, index2);
+            myEnd_Task();
+            //Task 4
+            myPrintArray(arrTask3, index1, index2);
+            myTask_4(arrTask3, index1, index2);
+            myEnd_Task();
+            //Task 5
+            myPrintArray(arrTask3, index1, index2);
+            myTask_5(arrTask3, index1, index2);
+            // Task 6 выводим на примере того-же массива
+            myTask_6(arrTask3, index1, index2);
+            myEnd_Task();
+            //создам новый массив 4х4 , и на его примере буду выводить результаты следующих тасков
+            index1 = 4;
+            index2 = 4;
+            int[,] myNewArr = new int[index1, index2];
+            mySet_Array(myNewArr, index1, index2);
+            myPrintArray(myNewArr, index1, index2);
+            //Task 7
+            myTask_7(myNewArr, index1, index2);
+            //Task 8 and 9
+            myTask_8_9(myNewArr, index1, index2);
+            myEnd_Task();
+            //Task 10
+            int index = 0;
+            for (; ; ) {    //цикл проверки ввода  нечетного числа
+                UserInput("Введите целое нечетное число n для размерности масивва n x n: ", ref index);
+                if (index % 2 == 0) {
+                    WriteLine("Вы ввели четное число, попробуйте еще раз!");
+                } else {
+                    break;
+                }
+            }
+            char[,] arrTask10 = new char[index, index];
+            myTask_10(arrTask10, index);
+            myEnd_Task();
 
-            ////Task 11
-            ////создаем двумерный квадратный массив 7x7 и заполняем его случайными элементами
-            ////алгоритм корректно работает с нечетным кол-вом элементов
-            //int[,] myArrTask11 = new int[7, 7];
-            //mySet_Array(myArrTask11, 7,7);
-            ////выводми массив на экран
-            //myPrintArray(myArrTask11, 7,7);
-            //myTask_11(myArrTask11, 7);
-            //WriteLine("Наш массив после того, как поменяли элементы на главной и побочной диагонали:\n ");
-            //myPrintArray(myArrTask11, 7, 7);
-            //myEnd_Task();
-            ////task 12
-            //int index_1_task12 = 0, index_2_task12 = 0;
-            //UserInput("введите индекс для двумерного массива i: ", ref index_1_task12);
-            //UserInput("введите индекс для двумерного массива j: ", ref index_2_task12);
-            ////создаем массив и заполняем случайными значениями
-            //int[,] myarrtask12 = new int[index_1_task12, index_2_task12];
-            //mySet_Array(myarrtask12, index_1_task12, index_2_task12);
-            //myPrintArray(myarrtask12, index_1_task12, index_2_task12);
-            //int[,] myNewArrTask12 = myTask_12(myarrtask12, index_1_task12, index_2_task12);
-            //WriteLine("наш массив после того, как мы повернули его на 90 градусов по часовой стрелке: \n");
-            //myPrintArray(myNewArrTask12, index_2_task12, index_1_task12);
+            //Task 11
+            //создаем двумерный квадратный массив 7x7 и заполняем его случайными элементами
+            //алгоритм корректно работает с нечетным кол-вом элементов
+            int[,] myArrTask11 = new int[7, 7];
+            mySet_Array(myArrTask11, 7, 7);
+            //выводми массив на экран
+            myPrintArray(myArrTask11, 7, 7);
+            myTask_11(myArrTask11, 7);
+            WriteLine("Наш массив после того, как поменяли элементы на главной и побочной диагонали:\n ");
+            myPrintArray(myArrTask11, 7, 7);
+            myEnd_Task();
+            //task 12
+            int index_1_task12 = 0, index_2_task12 = 0;
+            UserInput("введите индекс для двумерного массива i: ", ref index_1_task12);
+            UserInput("введите индекс для двумерного массива j: ", ref index_2_task12);
+            //создаем массив и заполняем случайными значениями
+            int[,] myarrtask12 = new int[index_1_task12, index_2_task12];
+            mySet_Array(myarrtask12, index_1_task12, index_2_task12);
+            myPrintArray(myarrtask12, index_1_task12, index_2_task12);
+            int[,] myNewArrTask12 = myTask_12(myarrtask12, index_1_task12, index_2_task12);
+            WriteLine("наш массив после того, как мы повернули его на 90 градусов по часовой стрелке: \n");
+            myPrintArray(myNewArrTask12, index_2_task12, index_1_task12);
 
 
-            //task 13
 
-            long indexSortArr = 30;
-            //byte[] myArrBubleSort = new byte[indexSortArr];
-            //mySet_Array(myArrBubleSort, indexSortArr);
-            ////myPrintArray(myArrBubleSort);
-            //myBubbleSort(myArrBubleSort);
-            //byte[] myArrInsertSort = new byte[indexSortArr];
-            //mySet_Array(myArrInsertSort, indexSortArr);
-            //myPrintArray(myArrInsertSort);
-            //myInsertSort(myArrInsertSort);
-            //myPrintArray(myArrInsertSort);
-            byte[] myArrSampleSort = new byte[indexSortArr];
-            mySet_Array(myArrSampleSort, indexSortArr);
-            myPrintArray(myArrSampleSort);
-            mySampleSort(myArrSampleSort);
-            myPrintArray(myArrSampleSort);
 
 
 
         }
 
+        
         //метод заполнения двухмерного массивa случайными числами от 10 до 99
         static void mySet_Array(int[,] myArr,int index1, int index2) {
             for (int i = 0; i< index1; i++) {
@@ -486,7 +474,7 @@ namespace HomeWork_6_Double_Array {
          * 1000, 100000, 1000000, 1000000000 элементов случайных чисел. 
          * Использовать Stopwatch из пространства имен -> System.Diagnostice;*/
 
-        //метод заполнения массива случайными числами от 10 до 999 включительно - перегруженный метод как и для заполнения двумерного массива
+        //метод заполнения массива случайными числами от 10 до 255 включительно - перегруженный метод как и для заполнения двумерного массива
         static void mySet_Array(byte[] myArr, long index) {
             for(int i =0; i< index; i++) {
                 myArr[i] =Convert.ToByte( new Random().Next(1, 255));
@@ -575,6 +563,27 @@ namespace HomeWork_6_Double_Array {
                 $" {milisec / 1000} секунд.";
             WriteLine(strOutput);
 
+
+        }
+
+        //готовая сортировка 
+        //
+        static void myReadySort(byte[] myArr) {
+            //засекаю время непосредственно перед самим алгоритмом 
+            System.Diagnostics.Stopwatch time = new System.Diagnostics.Stopwatch();
+            time.Start();
+            //Стандартная сортировка
+            Array.Sort(myArr);
+
+            time.Stop();
+            long milisec = time.ElapsedMilliseconds;
+            string strOutput = $"Стандартная Сортировка на {myArr.Length} элементов длится {milisec} милисекунд или" +
+                $" {milisec / 1000} секунд.";
+            WriteLine(strOutput);
+        }
+
+        //метод в котором вся логика 13 таска с сортировками
+        static void myLogicTask13() {
 
         }
 
