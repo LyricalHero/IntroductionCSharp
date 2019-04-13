@@ -113,6 +113,7 @@ namespace HomeWork_6_Double_Array {
             int[,] myNewArrTask12 = myTask_12(myarrtask12, index_1_task12, index_2_task12);
             WriteLine("наш массив после того, как мы повернули его на 90 градусов по часовой стрелке: \n");
             myPrintArray(myNewArrTask12, index_2_task12, index_1_task12);
+            myEnd_Task();
         }
 
         
