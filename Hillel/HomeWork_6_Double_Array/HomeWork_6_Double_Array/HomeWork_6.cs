@@ -88,13 +88,38 @@ namespace HomeWork_6_Double_Array {
             //myTask_10(arrTask10, index);
             //myEnd_Task();
 
+            ////Task 11
+            ////создаем двумерный квадратный массив 7x7 и заполняем его случайными элементами
+            ////алгоритм корректно работает с нечетным кол-вом элементов
+            //int[,] myArrTask11 = new int[7, 7];
+            //mySet_Array(myArrTask11, 7,7);
+            ////выводми массив на экран
+            //myPrintArray(myArrTask11, 7,7);
+            //myTask_11(myArrTask11, 7);
+            //WriteLine("Наш массив после того, как поменяли элементы на главной и побочной диагонали:\n ");
+            //myPrintArray(myArrTask11, 7, 7);
+            //myEnd_Task();
+            //task 12
+            int index_1_task12 = 0, index_2_task12 = 0;
+            UserInput("введите индекс для двумерного массива i: ", ref index_1_task12);
+            UserInput("введите индекс для двумерного массива j: ", ref index_2_task12);
+            //создаем массив и заполняем случайными значениями
+            int[,] myarrtask12 = new int[index_1_task12, index_2_task12];
+            mySet_Array(myarrtask12, index_1_task12, index_2_task12);
+            myPrintArray(myarrtask12, index_1_task12, index_2_task12);
+            int[,] myNewArrTask12 = myTask_12(myarrtask12, index_1_task12, index_2_task12);
+            WriteLine("наш массив после того, как мы повернули его на 90 градусов по часовой стрелке: \n");
+            myPrintArray(myNewArrTask12, index_2_task12, index_1_task12);
+
+
             //task 13
 
-            byte[] myArrBubleSort = new byte[10];
-            mySet_Array(myArrBubleSort, 10);
-            myPrintArray(myArrBubleSort);
+            long indexSortArr = 1000;
+            byte[] myArrBubleSort = new byte[indexSortArr];
+            mySet_Array(myArrBubleSort, indexSortArr);
+            //myPrintArray(myArrBubleSort);
             myBubbleSort(myArrBubleSort);
-            myPrintArray(myArrBubleSort);
+            
 
 
 
@@ -348,6 +373,46 @@ namespace HomeWork_6_Double_Array {
             }
         }
 
+        /*11. Дан квадратный массив. Поменяйте местами элементы,
+         * стоящие на главной и побочной диагонали, при этом каждый элемент должен остаться в том же столбце
+         * (то есть в каждом столбце нужно поменять местами элемент на главной диагонали и на побочной диагонали).
+         Метод корректно работает только если массив квадратный с нечетным количеством строк и столбцов, например 7х7 */
+         static void myTask_11(int[,] myArr, int index) {
+            int temp = 0;
+            //цикл прохода по всем элементам массива...
+            for(int i = 0; i < index; i++) {
+                for (int j = 0; j<index; j++) {
+                    //проходим по шлавной диагонали 
+                    //и меняем местами элементы с элементами побочной диагонали
+                    //index - 1 - i, j   - элементы побочной диагонали
+                    if (i == j) {
+                        temp = myArr[i, j];
+                        myArr[i, j] = myArr[index - 1 - i, j];
+                        myArr[index - 1 - i, j ] = temp;
+                    }
+                }
+            }
+
+        }
+
+        /*12. Дан прямоугольный массив размером n x m. 
+         * Поверните его на 90 градусов по часовой стрелке,
+         * записав результат в новый массив размером m x n.*/
+        static int[,] myTask_12(int[,] myArr,int index1,int index2) {
+            //новая размерность нового массива 
+            int newIndex1 = index2, newIndex2 = index1;
+            //создаем новый массив
+            int[,] myNewArr = new int[newIndex1, newIndex2];
+            //поворачиваем его на 90 градусов  по часовой стрелке :)
+            //выходит что теперь строки нового массива - это столбцы предыдущего
+            // а столбцы нового массива - строки предыдущего В ОБРАТНОМ ПОРЯДКЕ(т.е. снизу вверх)
+            for(int i = 0; i< newIndex1; i++) {
+                for(int j = 0; j< newIndex2; j++) {
+                    myNewArr[i, j] = myArr[index1-1-j,i];
+                }
+            }
+            return myNewArr;
+        }
 
 
         //метод, который вызываю по окончанию таска
@@ -396,20 +461,28 @@ namespace HomeWork_6_Double_Array {
         }
 
 
+
+
+
+
+
+
+
+
+
+
         /*13. Риализовать диагностическую программу, которая протестирует различне алгоритмы сортировки 
          * (реализовать самостоятельно - сортировка пузырьком, сортировка вставками, сортировка выборкой;
          * использовать готовую сортировку, встроенную в стандартный функционал) на скорость работы с 
          * 1000, 100000, 1000000, 1000000000 элементов случайных чисел. 
          * Использовать Stopwatch из пространства имен -> System.Diagnostice;*/
 
-        //метод заполнения массива случайными числамиот 10 до 999 включительно - перегруженный метод как и для заполнения двумерного массива
-        static void mySet_Array(byte[] myArr, int index) {
+        //метод заполнения массива случайными числами от 10 до 999 включительно - перегруженный метод как и для заполнения двумерного массива
+        static void mySet_Array(byte[] myArr, long index) {
             for(int i =0; i< index; i++) {
-                myArr[i] =Convert.ToByte( new Random().Next(1, 256));
-              //  System.Threading.Thread.Sleep(5); 
+                myArr[i] =Convert.ToByte( new Random().Next(1, 255));
+              
             }
-            
-            WriteLine("set");
         }
 
         //сортировка пузырьком
@@ -431,8 +504,10 @@ namespace HomeWork_6_Double_Array {
                 }
             }
             time.Stop();
-                        
-            WriteLine(time.ElapsedMilliseconds);
+            long milisec = time.ElapsedMilliseconds;
+            string strOutput = $"Сортировка методом пузырька на {myArr.Length} элементов длится {milisec} милисекунд или" +
+                $" {milisec/1000} секунд.";            
+            WriteLine(strOutput);
 
         }
 
