@@ -8,7 +8,7 @@ using static System.Console;
 namespace HomeWork_6_Double_Array {
     class HomeWork_6 {
         static void Main(string[] args) {
-            //LogicProgramm();
+            LogicProgramm();
 
             //task 13
             myLogicTask13();
@@ -113,12 +113,6 @@ namespace HomeWork_6_Double_Array {
             int[,] myNewArrTask12 = myTask_12(myarrtask12, index_1_task12, index_2_task12);
             WriteLine("наш массив после того, как мы повернули его на 90 градусов по часовой стрелке: \n");
             myPrintArray(myNewArrTask12, index_2_task12, index_1_task12);
-
-
-
-
-
-
         }
 
         
@@ -456,16 +450,7 @@ namespace HomeWork_6_Double_Array {
             }
             return value;
         }
-
-
-
-
-
-
-
-
-
-
+                                    
 
 
         /*13. Риализовать диагностическую программу, которая протестирует различне алгоритмы сортировки 
@@ -620,8 +605,7 @@ namespace HomeWork_6_Double_Array {
             WriteLine();
 
         }
-
-
+               
 
         //метод для вывода одномерного массива(для проверки отработки сортировки)
         //он же перегруженный метод вывода двумерного массива
