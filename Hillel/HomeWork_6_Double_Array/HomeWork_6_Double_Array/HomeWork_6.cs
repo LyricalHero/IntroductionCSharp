@@ -472,7 +472,8 @@ namespace HomeWork_6_Double_Array {
          * (реализовать самостоятельно - сортировка пузырьком, сортировка вставками, сортировка выборкой;
          * использовать готовую сортировку, встроенную в стандартный функционал) на скорость работы с 
          * 1000, 100000, 1000000, 1000000000 элементов случайных чисел. 
-         * Использовать Stopwatch из пространства имен -> System.Diagnostice;*/
+         * Использовать Stopwatch из пространства имен -> System.Diagnostice;
+         P.S. во всех  методах создаю новый массив и присваиваю ему рандомно заполненый массив*/
 
         //метод заполнения массива случайными числами от 10 до 255 включительно - перегруженный метод как и для заполнения двумерного массива
         static void mySet_Array(byte[] myArr) {
@@ -593,7 +594,30 @@ namespace HomeWork_6_Double_Array {
             // создаем, заполняем, и измеряем сортировки для массивов на 1000 элементов
             byte[] myArr1000 = new byte[numbersElement];
             mySet_Array(myArr1000);
+            myBubbleSort(myArr1000);
+            myInsertSort(myArr1000);
+            mySampleSort(myArr1000);
+            myReadySort(myArr1000);
+            WriteLine();
+            // создаем, заполняем, и измеряем сортировки для массивов на 100000 элементов
+            numbersElement = 100_000;
+            byte[] myArr100_000 = new byte[numbersElement];
+            mySet_Array(myArr100_000);
+            myBubbleSort(myArr100_000);
+            myInsertSort(myArr100_000);
+            mySampleSort(myArr100_000);
+            myReadySort(myArr100_000);
+            WriteLine();
 
+            // создаем, заполняем, и измеряем сортировки для массивов на 100 000 элементов
+            numbersElement = 1_000_000;
+            byte[] myArr1_000_000 = new byte[numbersElement];
+            mySet_Array(myArr1_000_000);
+            myBubbleSort(myArr1_000_000);
+            myInsertSort(myArr1_000_000);
+            mySampleSort(myArr1_000_000);
+            myReadySort(myArr1_000_000);
+            WriteLine();
 
         }
 
