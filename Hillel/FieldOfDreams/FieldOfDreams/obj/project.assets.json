@@ -688,23 +688,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\Class4-9\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\FieldOfDreams\\FieldOfDreams\\FieldOfDreams.csproj",
+      "projectUniqueName": "C:\\Users\\Class4-9\\Documents\\Driver\\IntroductionCSharp\\Hillel\\FieldOfDreams\\FieldOfDreams\\FieldOfDreams.csproj",
       "projectName": "FieldOfDreams",
-      "projectPath": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\FieldOfDreams\\FieldOfDreams\\FieldOfDreams.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\Intro C sharp\\Hillel\\temp_Git\\IntroductionCSharp\\Hillel\\FieldOfDreams\\FieldOfDreams\\obj\\",
+      "projectPath": "C:\\Users\\Class4-9\\Documents\\Driver\\IntroductionCSharp\\Hillel\\FieldOfDreams\\FieldOfDreams\\FieldOfDreams.csproj",
+      "packagesPath": "C:\\Users\\Class4-9\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Class4-9\\Documents\\Driver\\IntroductionCSharp\\Hillel\\FieldOfDreams\\FieldOfDreams\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Class4-9\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -729,6 +729,7 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true

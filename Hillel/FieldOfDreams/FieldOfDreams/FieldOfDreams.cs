@@ -22,10 +22,11 @@ namespace FieldOfDreams {
             bool isEnd = false;
             string strUserWord = "";
             for (; ; ) {
+                char userChar=' ';
                 strUserWord = SetWord();
-                WriteLine(strUserWord);
-
-
+                WriteLine(strUserWord); //удалить потом
+                UserInput("Введите букву: ", ref userChar);
+                WriteLine(userChar);
 
 
 
@@ -53,6 +54,7 @@ namespace FieldOfDreams {
         }
 
         //метод проверяющий корректность ввода значений символа а именно буквы
+        //нужно еще проверить что-бы буква была русской расскладки
         private static void UserInput(string userMessage, ref char Symvol) {
             for (; ; ) {
                 Write(userMessage);
@@ -60,7 +62,12 @@ namespace FieldOfDreams {
                     Symvol = Convert.ToChar(ReadLine());
                     if (Char.IsLetter(Symvol)) {
                         Symvol = Char.ToLower(Symvol);
-                        break;
+                        if((Symvol>='а') && (Symvol <= 'я')) { break; }
+                        else {
+                            WriteLine("Введите букву русского алфавита!");
+                            continue;
+                        }
+                        
                     }
                     else { continue; }
                 }
@@ -77,6 +84,7 @@ namespace FieldOfDreams {
             string word = arrWord[new Random().Next(0,5)];
             return word;
         }
+
         
 
             
