@@ -86,7 +86,7 @@ namespace Home_Work_7_Strings {
             string strCapital = ReadLine();
             WriteLine($"Столица государства {strCountry} — город {strCapital}");
 
-            //11)             
+            //11)  - логику закинул в отдельный метод           
             WriteLine(myTask11());
 
             /*12) Дано предложение из 10 слов. Заполнить ими массив из 10 элементов.*/
