@@ -9,3 +9,14 @@ C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel
 C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\obj\Debug\netcoreapp2.1\Home_Work_7_Strings.AssemblyInfo.cs
 C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\obj\Debug\netcoreapp2.1\Home_Work_7_Strings.dll
 C:\Users\Admin\Documents\Intro C sharp\Hillel\temp_Git\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\obj\Debug\netcoreapp2.1\Home_Work_7_Strings.pdb
+C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\bin\Debug\netcoreapp2.1\Home_Work_7_Strings.deps.json
+C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\bin\Debug\netcoreapp2.1\Home_Work_7_Strings.runtimeconfig.json
+C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\bin\Debug\netcoreapp2.1\Home_Work_7_Strings.runtimeconfig.dev.json
+C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\bin\Debug\netcoreapp2.1\Home_Work_7_Strings.dll
+C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\bin\Debug\netcoreapp2.1\Home_Work_7_Strings.pdb
+C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\obj\Debug\netcoreapp2.1\Home_Work_7_Strings.csprojAssemblyReference.cache
+C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\obj\Debug\netcoreapp2.1\Home_Work_7_Strings.csproj.CoreCompileInputs.cache
+C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\obj\Debug\netcoreapp2.1\Home_Work_7_Strings.AssemblyInfoInputs.cache
+C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\obj\Debug\netcoreapp2.1\Home_Work_7_Strings.AssemblyInfo.cs
+C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\obj\Debug\netcoreapp2.1\Home_Work_7_Strings.dll
+C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\Home_Work_7_Strings\Home_Work_7_Strings\obj\Debug\netcoreapp2.1\Home_Work_7_Strings.pdb
