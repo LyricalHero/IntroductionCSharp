@@ -4,6 +4,7 @@ using static System.Console;
 namespace Home_Work_7_Strings {
     class Home_Work_7_Strings {
         static void Main(string[] args) {
+
             myLogicProgramm();
 
             ReadLine();
