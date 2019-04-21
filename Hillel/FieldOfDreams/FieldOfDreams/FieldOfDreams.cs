@@ -4,7 +4,7 @@ using static System.Console;
 
 /*
  Программа игра "Поле  чудес"
-  массивы
+  лист
      
      */
 
@@ -20,13 +20,19 @@ namespace FieldOfDreams {
         //в бесконечном цикле - так надо (если пользователь решит завершить программу, то введет на вопрос "играем еще" - нет)
         private static void LoigcProgram() {
             bool isEnd = false;
-            string strUserWord = "";
+            string strUserWord = SetWord();
+            
             for (; ; ) {
                 char userChar=' ';
-                strUserWord = SetWord();
+                Dictionary<int, string> userTips = selectTips(strUserWord);
+                int attemps = userTips.Count; //кол-во попыток
                 WriteLine(strUserWord); //удалить потом
+                
                 UserInput("Введите букву: ", ref userChar);
                 WriteLine(userChar);
+
+
+
 
 
 
@@ -86,10 +92,35 @@ namespace FieldOfDreams {
         }
 
         
+        //метод, в который передаем наше слово, и в зависимости от  слова возвращает нам коллецикцию подсказок
+        //кол-во подсказок равно количеству букв в этом слове
+        //подсказки хранятся в словарях(они быстрее работают чем Списки)
+        static Dictionary<int, string> selectTips(string word) {
 
-            
+            Dictionary<int, string> FlowerDictionaryTips = new Dictionary<int, string>(6);
+            //подсказки к слову "цветок"
+            FlowerDictionaryTips.Add(2,"В слове 6 букв.");
+            FlowerDictionaryTips.Add(3, "В слове нет букв которые повторяются");
+            FlowerDictionaryTips.Add(0, "Женщины очень трепетно относятся к нему");
+            FlowerDictionaryTips.Add(1, "...... - он мужского рода");
+            FlowerDictionaryTips.Add(4, "Любит солнышко и воду");
+            FlowerDictionaryTips.Add(5, "Сн тесно связан с 8 Марта");
 
-       
+            Dictionary<int, string> PenDictionaryTips = new Dictionary<int, string>(5);
+            PenDictionaryTips.Add(0, "В слове 5 букв.");
+            PenDictionaryTips.Add(1, "В слове нет букв, которые повторяются");
+            PenDictionaryTips.Add(2, "У тебя есть такая часть тела");
+            PenDictionaryTips.Add(3, "В школе нельзя было без нее");
+            PenDictionaryTips.Add(4, "Это есть не только у тебя но и у двери");
+
+
+
+
+
+            return FlowerDictionaryTips;
+        }
+
+
 
 
 

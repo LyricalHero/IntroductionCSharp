@@ -20,3 +20,14 @@ C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\FieldOfDreams\Field
 C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.AssemblyInfo.cs
 C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.dll
 C:\Users\Class4-9\Documents\Driver\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.pdb
+C:\Users\Admin\Documents\Intro C sharp\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\bin\Debug\netcoreapp2.1\FieldOfDreams.deps.json
+C:\Users\Admin\Documents\Intro C sharp\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\bin\Debug\netcoreapp2.1\FieldOfDreams.runtimeconfig.json
+C:\Users\Admin\Documents\Intro C sharp\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\bin\Debug\netcoreapp2.1\FieldOfDreams.runtimeconfig.dev.json
+C:\Users\Admin\Documents\Intro C sharp\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\bin\Debug\netcoreapp2.1\FieldOfDreams.dll
+C:\Users\Admin\Documents\Intro C sharp\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\bin\Debug\netcoreapp2.1\FieldOfDreams.pdb
+C:\Users\Admin\Documents\Intro C sharp\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\Intro C sharp\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Intro C sharp\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\Intro C sharp\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.AssemblyInfo.cs
+C:\Users\Admin\Documents\Intro C sharp\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.dll
+C:\Users\Admin\Documents\Intro C sharp\IntroductionCSharp\Hillel\FieldOfDreams\FieldOfDreams\obj\Debug\netcoreapp2.1\FieldOfDreams.pdb
