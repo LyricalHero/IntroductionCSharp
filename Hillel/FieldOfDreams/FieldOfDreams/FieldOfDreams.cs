@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using static System.Console;
 
 /*
- Программа игра "Поле  чудес"
-  лист
-     
-     */
+ Программа игра "Поле  чудес"  */
 
 
 namespace FieldOfDreams {
