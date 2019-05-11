@@ -25,7 +25,7 @@ namespace FieldOfDreams {
                 int attemps = userTips.Count; //кол-во попыток
                 char[] userOutput = new char [strUserWord.Length]; //массив который будет выводится пользователю
                 //инициализация строки по умолчанию в формате "------"
-                for (int i = 0; i <= userTips.Count; i++) {
+                for (int i = 0; i < strUserWord.Length; i++) {
                     userOutput[i] = '-';
                 }
                 
@@ -35,10 +35,9 @@ namespace FieldOfDreams {
                     Write(userOutput );
                     WriteLine();
                     UserInput("Введите букву: ", ref userChar);
-                    WriteLine(userChar); // удалить потом    
                     if(FindChar(userChar, strUserWord, userOutput)) {
                         WriteLine("Вы угадали букву!");
-                        continue;
+                        
                     } else {
                         WriteLine("Вы не угадали букву!" +
                             "\nОсталось попыток: {0}", attemps);
@@ -46,6 +45,13 @@ namespace FieldOfDreams {
                     }  
                                                                                                          
                     attemps--;
+                }
+                //проверка если у нас отались символы "-", то пользователь проиграл
+                //если символов нет то пользователь выиграл
+                if(FindChar('-',Convert.ToString( userOutput),userOutput)) {
+                    WriteLine("Вы проиграли!");
+                } else {
+                    WriteLine("Поздравляю, Вы выиграли! Слово: {0}", strUserWord);
                 }
 
                 isEnd = EndGame();
@@ -98,8 +104,8 @@ namespace FieldOfDreams {
 
         //метод который выбирает наше слово из 2х
         private static string SetWord() {
-            string[] arrWord = new string[4] { "цветок","ручка","школа","доска"};
-            string word = arrWord[new Random().Next(0,3)];
+            string[] arrWord = new string[2] { "цветоко","ручка"};
+            string word = arrWord[new Random().Next(0,2)];
             return word;
         }
 
@@ -116,14 +122,16 @@ namespace FieldOfDreams {
             FlowerDictionaryTips.Add(0, "Женщины очень трепетно относятся к нему");
             FlowerDictionaryTips.Add(1, "...... - он мужского рода");
             FlowerDictionaryTips.Add(4, "Любит солнышко и воду");
-            //FlowerDictionaryTips.Add(5, "Сн тесно связан с 8 Марта");
+            FlowerDictionaryTips.Add(5, "Сн тесно связан с 8 Марта");
+            FlowerDictionaryTips.Add(6, "В слове 2 одинаковых буквы");
+
             //подсказки к слову ручка
             Dictionary<int, string> PenDictionaryTips = new Dictionary<int, string>(5);
             PenDictionaryTips.Add(0, "В слове 5 букв.");
             PenDictionaryTips.Add(1, "В слове нет букв, которые повторяются");
             PenDictionaryTips.Add(2, "У тебя есть такая часть тела");
             PenDictionaryTips.Add(3, "В школе нельзя было без нее");
-            //PenDictionaryTips.Add(4, "Это есть не только у тебя но и у двери");
+            PenDictionaryTips.Add(4, "Это есть не только у тебя но и у двери");
 
             if (word == "цветок") { return FlowerDictionaryTips; } 
                 else { return PenDictionaryTips; }
@@ -135,7 +143,7 @@ namespace FieldOfDreams {
             //т.к. одинаковых букв может быть несколько нам нужна промежуточная переменная,
             //что бы понимать были ли подставлены буквы 
             byte temp = 0;
-            for (int i = 0; i < userWord.Length-1; i++) {
+            for (int i = 0; i < userWord.Length; i++) {
                 if (ch == userWord[i]) {
                     userOutput[i] = ch;
                     temp++;
