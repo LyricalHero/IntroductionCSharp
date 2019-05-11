@@ -19,23 +19,37 @@ namespace FieldOfDreams {
         //Логика нашей программы 
         //в бесконечном цикле - так надо (если пользователь решит завершить программу, то введет на вопрос "играем еще" - нет)
         private static void LoigcProgram() {
-            bool isEnd = false;
-            string strUserWord = SetWord();
-            
+                        
             for (; ; ) {
                 char userChar=' ';
-                Dictionary<int, string> userTips = selectTips(strUserWord);
+                bool isEnd = false;
+                string strUserWord = SetWord(); // выбор случайного слова
+                Dictionary<int, string> userTips = selectTips(strUserWord); //подсказки для слова
                 int attemps = userTips.Count; //кол-во попыток
-                WriteLine(strUserWord); //удалить потом
+                char[] userOutput = new char [strUserWord.Length]; //массив который будет выводится пользователю
+                //инициализация строки по умолчанию в формате "------"
+                for (int i = 0; i <= userTips.Count; i++) {
+                    userOutput[i] = '-';
+                }
                 
-                UserInput("Введите букву: ", ref userChar);
-                WriteLine(userChar);
-
-
-
-
-
-
+                //цикл одной игры 
+                while (attemps >= 0) {
+                    Write("Слово: ");
+                    Write(userOutput );
+                    WriteLine();
+                    UserInput("Введите букву: ", ref userChar);
+                    WriteLine(userChar); // удалить потом    
+                    if(FindChar(userChar, strUserWord, userOutput)) {
+                        WriteLine("Вы угадали букву!");
+                        continue;
+                    } else {
+                        WriteLine("Вы не угадали букву!" +
+                            "\nОсталось попыток: {0}", attemps);
+                        WriteLine("Подсказка: " + userTips[attemps-1]);
+                    }  
+                                                                                                         
+                    attemps--;
+                }
 
                 isEnd = EndGame();
                 if (isEnd) { continue; }
@@ -50,6 +64,7 @@ namespace FieldOfDreams {
             for (; ; ) {
                 WriteLine("\nИграем еще? <да / нет>: ");
                 isEnd = ReadLine();
+                isEnd = isEnd.ToLower();    //если пользователь ввел Большие буквы - так же отработает
                 if (isEnd == "да") { return true; }
                 else if (isEnd == "нет") { return false; }
                 else {
@@ -84,16 +99,16 @@ namespace FieldOfDreams {
             }
         }
 
-        //метод который выбирает наше слово из 4х
+        //метод который выбирает наше слово из 2х
         private static string SetWord() {
             string[] arrWord = new string[4] { "цветок","ручка","школа","доска"};
-            string word = arrWord[new Random().Next(0,5)];
+            string word = arrWord[new Random().Next(0,3)];
             return word;
         }
 
         
         //метод, в который передаем наше слово, и в зависимости от  слова возвращает нам коллецикцию подсказок
-        //кол-во подсказок равно количеству букв в этом слове
+        //кол-во подсказок равно количеству букв в этом слове -1
         //подсказки хранятся в словарях(они быстрее работают чем Списки)
         static Dictionary<int, string> selectTips(string word) {
 
@@ -104,20 +119,34 @@ namespace FieldOfDreams {
             FlowerDictionaryTips.Add(0, "Женщины очень трепетно относятся к нему");
             FlowerDictionaryTips.Add(1, "...... - он мужского рода");
             FlowerDictionaryTips.Add(4, "Любит солнышко и воду");
-            FlowerDictionaryTips.Add(5, "Сн тесно связан с 8 Марта");
-
+            //FlowerDictionaryTips.Add(5, "Сн тесно связан с 8 Марта");
+            //подсказки к слову ручка
             Dictionary<int, string> PenDictionaryTips = new Dictionary<int, string>(5);
             PenDictionaryTips.Add(0, "В слове 5 букв.");
             PenDictionaryTips.Add(1, "В слове нет букв, которые повторяются");
             PenDictionaryTips.Add(2, "У тебя есть такая часть тела");
             PenDictionaryTips.Add(3, "В школе нельзя было без нее");
-            PenDictionaryTips.Add(4, "Это есть не только у тебя но и у двери");
+            //PenDictionaryTips.Add(4, "Это есть не только у тебя но и у двери");
 
+            if (word == "цветок") { return FlowerDictionaryTips; } 
+                else { return PenDictionaryTips; }
+        }
 
-
-
-
-            return FlowerDictionaryTips;
+        //метод который ищет букву в слове и если нашло, то подставляет эту букву на нужную позицию и возвращает true
+        // в случае если буквы в слове нет, то возвращает false
+        static bool FindChar(char ch, string userWord, char[] userOutput) {
+            //т.к. одинаковых букв может быть несколько нам нужна промежуточная переменная,
+            //что бы понимать были ли подставлены буквы 
+            byte temp = 0;
+            for (int i = 0; i < userWord.Length-1; i++) {
+                if (ch == userWord[i]) {
+                    userOutput[i] = ch;
+                    temp++;
+                }         
+            }
+            //если буквы есть в слове
+            if (temp > 0) { return true; }
+                else { return false; }
         }
 
 
